@@ -1,0 +1,171 @@
+---
+title: "Case study_field_AOA"
+author: "Miguel A. Redondo"
+date: "2023-03-08"
+output: html_document
+---
+
+If needed, we load the environment from the first script
+
+```{r}
+#load("./environments/global_env_01.RData")
+```
+
+#Import and clean tree with OTU placements
+Prepare the tree to match with the trait table
+```{r}
+#Import tree
+tree_cs<-read.tree("./case_study/epa_resultnewick_rooted.tree")#This tree includes the bootstrap values
+#Modify OTU nomenclature to match table
+tree_cs$tip.label<-gsub("OTU_","OTU",tree_cs$tip.label)#Change the name of the OTUs
+tree_cs$tip.label<-gsub("_[1-8].*","",tree_cs$tip.label) 
+#Include the OTU on the trait table to be predicted
+list_taxa<-tree_cs$tip.label[grep("OTU", tree_cs$tip.label)]
+rows_cs<-data.frame(matrix(nrow=length(list_taxa), ncol=ncol(traits_AOA3)), row.names = list_taxa)
+colnames(rows_cs)<-colnames(traits_AOA3)  
+traits_cs<-rbind(traits_AOA3,rows_cs)#Add the rows to the table
+traits_cs<-subset(traits_cs, select=-c(ipct))#Delete the ipct gene (no phylogenetic signal)
+#Drop from the tree all taxa except genomes and OTUs
+tree_cs2<-drop.tip(tree_cs,tree_cs$tip.label[!tree_cs$tip.label%in%rownames(traits_cs)])
+#Select the rows on the trait matrix and re-arrange them 
+spmatch_cs<-match(tree_cs2$tip.label, rownames(traits_cs))
+traits_cs2<-traits_cs[spmatch_cs,]
+#Check that the names are in the same order in the table and tree
+print(identical(rownames(traits_cs2), tree_cs2$tip.label))#Must be true
+```
+# Compute predictions on OTUs
+
+```{r}
+cs_predictions<-pred_phyl_glmnet(traits=traits_cs2,tree=tree_cs2, opt.thres=TRUE, opt.lam=TRUE)
+
+#Compile the predictions
+predicted_genes_cs<-data.frame(lapply(cs_predictions$predictions, function (x) x[["pred_class"]]))#Extract the predicted genes
+rownames(predicted_genes_cs)<-gsub("OTU", "OTU_",rownames(predicted_genes_cs))#Restore the names of the OTUs
+predicted_genes_cs2<-predicted_genes_cs[grep("OTU", rownames(predicted_genes_cs)),]#Select only the taxa from the case study
+```
+
+
+# RLQ and fourth corner analyses
+
+Import the data from the field study 
+```{r}
+load("./case_study/AOA_phyloseq.RData")
+```
+
+Prepare the three tables for the RLQ and fourth corner analyses
+
+```{r}
+#Delete the sample S17 that has NAs
+AOA_phyloseq_pruned<-prune_samples(rownames(sample_data(AOA_phyloseq))!="S17", AOA_phyloseq)
+#Delete OTU_108 because it has zero reads after deleting sample S17
+AOA_phyloseq_pruned<-prune_taxa(taxa_sums(AOA_phyloseq_pruned)>0, AOA_phyloseq_pruned)
+#Table1.Extract the OTU table
+species_table<-as.data.frame(t(otu_table(AOA_phyloseq_pruned)))
+#Table2.Extract environmental data
+habitat_characteristics<-as(sample_data(AOA_phyloseq_pruned), "data.frame")
+habitat_characteristics$FIELD<-as.factor(habitat_characteristics$FIELD) #Convert to factor 
+habitat_characteristics$TREATMENT<-as.factor(habitat_characteristics$TREATMENT)#Convert to factor
+habitat_characteristics2<-data.frame(lapply(habitat_characteristics, function(x) if(is.character(x)) as.numeric(x) else x))#Convert all characters to numeric
+rownames(habitat_characteristics2)<-rownames(habitat_characteristics)#Add the row names that it had before
+#Table3.Extract species traits
+species_traits<-predicted_genes_cs2[rownames(predicted_genes_cs2)!="AOA_OTU_108",]
+
+#Match names of all three tables
+species_traits<-species_traits[match(colnames(species_table),rownames(species_traits)),]
+identical(rownames(species_traits), colnames(species_table))#Must be true
+habitat_characteristics2<-habitat_characteristics2[match(rownames(species_table), rownames(habitat_characteristics2)),]
+identical(rownames(habitat_characteristics2), rownames(species_table))#Must be true
+```
+
+Select the traits and soil properties
+
+```{r}
+incl_env<-c("SD15", "CLAY", "TS.", "P", "K", "CA", "CU", "PH", "NH4.N", "TOT.N", "TOT.C", "DOC", "C.N", "act")#Soil properties reported in Jones et al. 2019
+incl_genes<-c("Amt.1", "Amt.2", "ureC", "nhap", "trk", "cheY_2", "proDH", "flaK", "cheA", "TadC", "flal")#These are genes with at least 5 values of 1 or 0
+habitat_characteristics_filtered<-habitat_characteristics2[,colnames(habitat_characteristics2) %in% incl_env]
+species_traits_filtered<-species_traits[,colnames(species_traits) %in% incl_genes]
+```
+
+
+
+## Compute RLQ
+
+```{r}
+#We make an ordination for each of the tables
+otus_aoa<-dudi.coa(species_table, scannf=FALSE)#CA for the species
+env_aoa<-dudi.hillsmith(habitat_characteristics_filtered, row.w=otus_aoa$lw, scannf=FALSE)#Hillsmith for the soil properties
+traits_aoa<-dudi.pca(species_traits_filtered, center=FALSE, scale=FALSE, row.w=otus_aoa$cw, scannf=FALSE)#PCA for the traits
+#RLQ analyses
+rlq_aoa<-rlq(dudiR=env_aoa, 
+             dudiL=otus_aoa, 
+             dudiQ=traits_aoa,
+             scannf=FALSE)
+
+randtest(rlq_aoa, nrepet=9999, modeltype=6)
+```
+
+Clean plots for the RLQ analysis
+
+```{r}
+#Site scores
+site_scores<-rlq_aoa$lR
+site_scores$site_name<-rownames(site_scores)
+#Species scores
+species_scores<-rlq_aoa$lQ
+species_scores$otu_name<-rownames(species_scores)
+#RLQ Environmental variables
+env_var<-rlq_aoa$l1
+env_var$names<-rownames(env_var)
+#RLQ species traits
+traits<-rlq_aoa$c1
+traits$trait_name<-rownames(traits)
+
+#Biplot traits and environmental variables
+ggplot(data = traits)+
+  geom_segment(aes(x=0, y=0, xend=CS1, yend=CS2),arrow = arrow(length=unit(0.30,"cm"), ends="last", type = "closed"), color="red",data = traits)+
+  geom_hline(yintercept=0, linetype="dotted", color = "black") +
+  geom_vline(xintercept=0, linetype="dotted", color = "black") +
+  geom_text(aes(x=CS1*0.9, y=CS2*1.1),label=rownames(traits), size=5,color="red",data=traits)+theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))+xlab("") +
+  ylab("")+geom_segment(aes(x=0, y=0, xend=RS1, yend=RS2),arrow = arrow(length=unit(0.30,"cm"), ends="last", type = "closed"), color="blue",data = env_var)+geom_text(aes(x=RS1*0.9, y=RS2*1.1),label=rownames(env_var), size=5,color="blue",data=env_var)
+
+#Biplot sites and species
+ggplot(data = site_scores, aes(x=AxcR1, y=AxcR2))+
+  geom_point(data = site_scores,size = 6,fill="grey",shape=21)+
+  geom_hline(yintercept=0, linetype="dotted", color = "black") +
+  geom_vline(xintercept=0, linetype="dotted", color = "black") +
+  theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))+ggrepel::geom_text_repel(aes(label=site_name), size=4)+xlab("") + ylab("")+geom_point(aes(x=AxcQ1, y=AxcQ2),data = species_scores,size = 3,fill="grey",shape=3, stroke=0.5, position=position_jitter(w = 0.2, h = 0.2))
+
+
+```
+
+## Compute fourth corner
+
+```{r}
+#Fourth corner function not correcting p-value
+fourth_aoa<-fourthcorner(
+  tabR=habitat_characteristics_filtered,
+  tabL=species_table,
+  tabQ=species_traits_filtered,
+  modeltype = 6,
+  p.adjust.method.G = "none", 
+  p.adjust.method.D = "none",
+  nrepet=99999#Increase this value to 99999 because of the amount of rows on the dataset
+)
+summary(fourth_aoa)
+plot(fourth_aoa, alpha=0.07)
+
+#Fourth corner function correcting p-value
+fourth_aoa2<-fourthcorner(
+  tabR=habitat_characteristics_filtered,
+  tabL=species_table,
+  tabQ=species_traits_filtered,
+  modeltype = 6,
+  p.adjust.method.G = "fdr", 
+  p.adjust.method.D = "fdr",
+  nrepet=99999#Increase this value to 99999 because of the amount of rows on the dataset
+)
+summary(fourth_aoa2)
+plot(fourth_aoa2, alpha=0.07)
+
+```
+

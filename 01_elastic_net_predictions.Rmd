@@ -1,0 +1,462 @@
+---
+title: "Predictive modeling of AOA"
+author: "Miguel A. Redondo"
+date: "2022-10-25"
+output: html_document
+---
+# Importing data and functions
+
+Install packages
+
+```{r cars, message=FALSE}
+library(MPSEM) 
+library(MASS)
+library(parallel)
+library(glmnet)
+library(caret)
+library(pROC)
+library(gbm)
+library(plyr)
+library(dplyr)
+library(reshape2)
+library(vegan)
+library(ade4)
+library(ggfortify)
+library(phyloseq)
+library(picante)
+library(caper)
+#Import functions for the script
+#Predictions using elastic net regression
+source("./functions/pred_phyl_glmnet.R")
+#Predictions using boosting
+source("./functions/pred_phyl_boost.R")
+```
+
+Import data and functions
+
+```{r}
+#Import data and functions
+traits_AOA<-read.table("./data/AOA_trait_table.txt", sep="\t", header=TRUE)#This is the table with the gene content of Genomes and MAGs
+tree_AOA<-read.tree("./data/finaltree_AOA_241022_2.tree")#This is the reference phylogeny tree with bootstrap values
+```
+
+# Cleaning data
+
+```{r}
+#Modify the labels of the tree and the genomes, to make them match
+tree_AOA$tip.label<-gsub("_[1-8].*","",tree_AOA$tip.label) #Delete all extended parts after _
+traits_AOA$Accession<-gsub("\\.[1-2].*","", traits_AOA$Accession)#Delete all extended parts after .
+#Delete the columns with no informative traits, and set rownames 
+rownames(traits_AOA)<-traits_AOA[,1]
+traits_AOA2<-traits_AOA[,-c(1:6)]
+#Filter the trait table keeping only the genomes for the analyses:168 genomes with >80% completeness and <5% contamination 
+full_list<-tree_AOA$tip.label
+traits_AOA3<-traits_AOA2[rownames(traits_AOA2)%in%full_list,]
+# #If one wants to export the tree with only the genomes
+# labels_keep<-c(c("NitBrien", "NtrTenui", "NitMult2", "NitMulti", "NtsCryot", "NtsEurop", "NtsEutro"),rownames(traits_AOA3))
+# tree_genomes<-drop.tip(tree_AOA,tree_AOA$tip.label[!tree_AOA$tip.label%in%labels_keep])
+# write.tree(tree_genomes, file="tree_only_genomes.txt")
+#I add now the empty rows with the alves sequences for the predictions
+list_alves<-full_list[!(full_list%in%rownames(traits_AOA3))]
+rows_alves<-data.frame(matrix(nrow=length(list_alves), ncol=ncol(traits_AOA3)), row.names = list_alves)
+colnames(rows_alves)<-colnames(traits_AOA3)  
+traits_AOA4<-rbind(traits_AOA3,rows_alves)
+#Re-arrange the matrix based on the order of labels on the tree
+spmatch2<-match(tree_AOA$tip.label, rownames(traits_AOA4))
+traits_AOA5<-traits_AOA4[spmatch2,]
+#Remove the outgroup from tree and trait table
+outgroup<-c("NitBrien", "NtrTenui", "NitMult2", "NitMulti", "NtsCryot", "NtsEurop", "NtsEutro")
+traits_AOA6<-traits_AOA5[!rownames(traits_AOA5)%in%outgroup,]
+tree_AOA2<-drop.tip(tree_AOA,outgroup)
+#Check that the names are in the same order in the final table and tree
+print(identical(rownames(traits_AOA6), tree_AOA2$tip.label)) #This must be TRUE to avoid error in the function
+```
+
+# Overview of genome taxonomy
+
+In total, 168 genomes are included in the study (completeness >80% and contamination <5%) The 168 genomes were manually classified based on their placement on the reference phylogeny.
+
+```{r}
+#Here I summarise the distribution of the 168 genomes across clades and subclades
+all_taxa2_classified<-read.table("./taxonomy_genomes/all_taxa2_classified.txt", sep="\t", header=TRUE)
+all_taxa2_classified<-all_taxa2_classified[!(all_taxa2_classified$name%in%(outgroup)),]#Delete AOB
+genomes_classified<-all_taxa2_classified[all_taxa2_classified$predictions=="no",]#These are the 168 genomes
+alves_seqs_classified<-all_taxa2_classified[all_taxa2_classified$predictions=="yes",c(1:6)]#These are all the rest of sequences of the ref. phylogeny, deleting the NAs
+#A summary of the genomes by lineage and clade
+lineages<-as.data.frame(genomes_classified%>%group_by(lineage)%>%summarise(total_genomes=n()))
+clades<-as.data.frame(genomes_classified%>%group_by(lineage,clade)%>%summarise(total_genomes=n()))
+print(lineages)
+print(clades)
+```
+
+### PCA of genomes, genes and AOA clades
+
+We compute a PCA with the gene content of the genomes.  We obtain an overview have an overview of correlation between genes, and overall distribution across amoA lineages and clades. 
+We display the scaling 2 of the PCA, i.e. we are interested in relationships between descriptors (genes).Distance between genomes (circles) is mahalanobis distance.Length of vectors are standard deviation of the descriptor (genes) or proportional to that (if scl !=1)
+```{r}
+#PCA plot
+genomes_classified$extra_info<-paste(genomes_classified$lineage, "-", genomes_classified$clade, sep="")#Create field for coloring plot
+object_pca<-rda(genomes_classified[,c(7:ncol(genomes_classified))])#Compute PCA.Default is scaling 2
+total_data<-cbind(genomes_classified, scores(object_pca)$sites)#Extract scores of samples 
+vectors<-scores(object_pca)$species*0.8#Extract and modify length of vectors
+#Calculate the variation explained by each PC axis
+Axis1_var<-paste("PC1"," (",round(object_pca$CA$eig["PC1"]/object_pca$CA$tot.chi*100,1), "%",")", sep="")
+Axis2_var<-paste("PC2"," (",round(object_pca$CA$eig["PC2"]/object_pca$CA$tot.chi*100,1), "%",")",sep="")
+#Make PCA plot
+ggplot(data = total_data, aes(x=PC1, y=PC2))+
+  geom_point(data = total_data, aes(fill=extra_info, colour=extra_info),size = 4, shape=21)+
+  geom_hline(yintercept=0, linetype="dotted", color = "black") +
+  geom_vline(xintercept=0, linetype="dotted", color = "black") +
+   xlab(Axis1_var) +
+  ylab(Axis2_var) +
+  geom_segment(aes(x=0, y=0, xend=PC1, yend=PC2),arrow = arrow(length=unit(0.30,"cm"), ends="last", type = "closed"), data = vectors)+geom_text(aes(x=PC1*0.9, y=PC2*1.1),label=rownames(vectors), size=5,data=vectors)+theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))
+```
+
+
+# Phylogenetic signal (D)
+
+We test what is the strength of the phylogenetic signal of the traits that we selected
+
+```{r}
+#Pruning the tree to keep only the 168 genomes
+traits_AOA3_ps<-traits_AOA3#We start from the trait table of the genomes
+#Import from ARB a tree with extended and justified edges length. Edge length=0 gives error in the function. IMPORTANT: this is not an ultrametric tree
+tree_AOA_ps<-read.tree("./data/ancestral_rec.tree")
+tree_AOA_ps$tip.label<-gsub("_[1-8].*","",tree_AOA_ps$tip.label)#Modify label names to match trait table
+tree_AOA_ps2<-drop.tip(tree_AOA_ps,tree_AOA_ps$tip.label[!(tree_AOA_ps$tip.label%in%rownames(traits_AOA3_ps))])#Delete taxa with no genomes
+#Arrange the trait table order to match the tip label order
+spmatch2_ps<-match(tree_AOA_ps2$tip.label, rownames(traits_AOA3_ps))
+traits_AOA4_ps<-traits_AOA3_ps[spmatch2_ps,]
+print(identical(rownames(traits_AOA4_ps), tree_AOA_ps2$tip.label)) #This must be True
+traits_AOA4_ps$names<-rownames(traits_AOA4_ps)#We add a column with the name of the taxa to create the comparative dataset
+tree_AOA_ps2$node.label<-c(1:167)#We add a code to each node, to avoid repeated names, to avoid error in the function 
+#Create the comparative dataset for the caper package
+AOA_phylogenetic_signal<-comparative.data(tree_AOA_ps2, traits_AOA4_ps, names)
+#Create the matrix that will contain the data for the phylogenetic signal
+phyl_signal_genes<-matrix(ncol=3, nrow=ncol(traits_AOA3_ps), dimnames=list(colnames(traits_AOA3_ps)))
+colnames(phyl_signal_genes)<-c("D", "P(1)_phyl_signal", "P(0)_brownian")
+#Import a variation of the phylo.d function that allows input of trait names that are not literal
+source("./functions/my_phyloD.R")
+
+for (i in 1:ncol(traits_AOA3_ps)){#Run the analysis for each gene
+  phylsig<-my_phylo.d(AOA_phylogenetic_signal, binvar=colnames(traits_AOA3_ps)[i])
+  phyl_signal_genes[i,"D"]<-phylsig$DEstimate
+  phyl_signal_genes[i,"P(1)_phyl_signal"]<-phylsig$Pval1#P value for the test of D different from 1 (phylogenetic signal)
+  phyl_signal_genes[i,"P(0)_brownian"]<-phylsig$Pval0#P value for the test of D different from 0
+  }
+#The final matrix with the results
+phyl_signal_genes
+```
+
+
+
+# Predictions
+
+## 1.Phylogenetic eigenvectors
+
+```{r}
+# Run function to predict genes with elastic net regression
+AOA_predictions_opt<-pred_phyl_glmnet(traits=traits_AOA6,tree=tree_AOA2, opt.thres=TRUE, opt.lam=TRUE)
+```
+
+### Accuracy of predictions by clades
+These results are based on the internal Leave one out cross validation of the pred_phyl_glmnet function
+
+```{r}
+#Extract the observed vs predicted data for each genome
+observed<-data.frame(lapply(AOA_predictions_opt$CV_predictions, function(x) x[["obs"]]))
+predicted<-data.frame(lapply(AOA_predictions_opt$CV_predictions, function(x) x[["pred"]]))
+rownames(observed)<-rownames(AOA_predictions_opt$CV_predictions[[1]])
+rownames(predicted)<-rownames(AOA_predictions_opt$CV_predictions[[1]])
+#Obtain accuracy 
+accuracy_genomes<-c()#Create the vector that will contain the accuracies
+for (i in 1:nrow(observed)){#Compute genome by genome
+  accuracy_genomes[i]<- mean(observed[i,]==predicted[i,])
+}
+names(accuracy_genomes)<-rownames(observed)
+accuracy_genomes<-data.frame(accuracy_genomes)
+#Obtaining sensitivity and specificity of predictions at genome level
+sensitivity_genomes<-c()#Create the vector that will contain the sensitivities
+specificity_genomes<-c()#Create the vector that will contain the specificities
+for (i in 1:nrow(observed)){#Compute genome by genome
+test<-t(rbind(observed[i,],predicted[i,]))#For each genome, combine observed and predicted
+roc_test<-suppressMessages(roc(response=test[,1], predictor=test[,2],direction="<" ))#Compute the roc curve
+sensitivity_genomes[i]<-coords(roc_test, x=1, input="threshold", ret="sensitivity")[1,1]#Compute sensitivity
+specificity_genomes[i]<-coords(roc_test, x=1, input="threshold", ret="specificity")[1,1]#Compute specificity
+}
+#Combine accuracy, sensitivity and specificity
+pred_info_genomes<-cbind(accuracy_genomes, data.frame(sensitivity_genomes), data.frame(specificity_genomes))
+print(pred_info_genomes)#Info by genome
+#Grouping the genomes by taxonomy
+#Merge accuracy table with taxonomy table
+comp_lin<-pred_info_genomes
+comp_lin$name<-rownames(comp_lin)
+result_taxonomy<-join(comp_lin, genomes_classified, by="name")
+#Summarize by lineages
+results_by_lineages<-result_taxonomy%>%group_by(lineage,clade)%>%summarise(mean_accuracy=mean(accuracy_genomes), mean_sensitivity=mean(sensitivity_genomes), mean_specificity=mean(specificity_genomes),total_genomes=n())
+results_by_lineages
+```
+
+## 2.Ancestral state reconstruction
+
+```{r warning=FALSE}
+#Import from ARB a tree with extended and justified edges length. Edge length=0 gives error in the function. IMPORTANT: this is not an ultrametric tree
+tree_AOA_asr<-read.tree("./data/ancestral_rec.tree")#Import tree
+tree_AOA_asr$tip.label<-gsub("_[1-8].*","",tree_AOA_asr$tip.label)#Modify tip labels to match trait table names 
+tree_AOA_asr2<-drop.tip(tree_AOA_asr,outgroup)#Delete outgroup and leave all other taxa of the phylogeny
+#Create the matrix that will contain the output
+AOA_pred_picante<-matrix(ncol=ncol(traits_AOA3), nrow=sum(is.na(traits_AOA6[,1])))#Create a matrix that will contain the predicted tips. The rownames will be given by the phyEstimate Disc function. Because is the same tree, the names will be the same for all genes. 
+colnames(AOA_pred_picante)<-colnames(traits_AOA3)#Name the columns according to the genes
+
+for (i in 1:ncol(traits_AOA3)){
+pic_pred<-phyEstimateDisc(tree_AOA_asr2,traits_AOA3[,i,drop=FALSE])#ASR for the taxa on the phylogeny for each gene
+AOA_pred_picante[,i]<-pic_pred$estimated.state# Compile the estimated state
+}
+#Summarize final predictions table
+AOA_pred_picante2<-data.frame(apply(AOA_pred_picante, 2, as.numeric))#convert estimated state to binary
+rownames(AOA_pred_picante2)<-rownames(pic_pred)#Assign row names
+```
+
+
+# Co-inertia between eigenvectors and ancestral state
+
+```{r}
+#A co-inertia test will compute the similarity between PEM and ASR predictions
+#A coinertia function to run wil different datasets
+coinertia_func2=function(dataset1, dataset2){
+dudi_gen<-dudi.pca(dataset1, scannf=FALSE, scale=FALSE)
+dudi_pred<-dudi.pca(dataset2, scannf=FALSE, scale=FALSE)
+test.coi<-coinertia(dudi_gen, dudi_pred, scannf=FALSE)
+list(test.coi, randtest(test.coi))}
+#Compile predictions of PEM
+AOA_pred_phyl<-data.frame(lapply(AOA_predictions_opt$predictions, function (x) x[["pred_class"]]))
+#Compute coinertia between PEM and ASR
+coinertia_predictions<-coinertia_func2(AOA_pred_picante2, AOA_pred_phyl)
+coinertia_predictions[[1]]$RV
+#Using same tree and threshold for ASR and PEM
+#Matching names in tree and trait table
+spmatch3<-match(tree_AOA_asr2$tip.label, rownames(traits_AOA6))
+traits_AOA7<-traits_AOA6[spmatch3,]
+print(identical(rownames(traits_AOA7), tree_AOA_asr2$tip.label))#Check tips and trait are same order. Must be TRUE
+#Compute predictions
+AOA_predictions_opt_othertree<-pred_phyl_glmnet(traits=traits_AOA7,tree=tree_AOA_asr2, opt.thres=FALSE, opt.lam=TRUE)
+#Summarize the class of the predictions
+AOA_pred_phyl2<-data.frame(lapply(AOA_predictions_opt_othertree$predictions, function (x) x[["pred_class"]]))
+#Running co-inertia function
+coinertia_predictions2<-coinertia_func2(AOA_pred_picante2, AOA_pred_phyl2)
+coinertia_predictions2[[1]]$RV
+```
+
+
+# 20% hold out validation
+
+We hold out 20% of the entire dataset(test dataset), and we train the model and predict them with the 80% left (train dataset)
+
+
+```{r warning=FALSE}
+#Start by setting the conditions for the validation
+n_runs=1#I leave 1 for the script to run fast. Change to desired number of runs
+mynames<-list(colnames(traits_AOA3))
+same_tree=FALSE#Select if ASR and PEM run on the same tree
+#Create the matrices for the PEM predictions
+valid_acc<-matrix(nrow=ncol(traits_AOA3), ncol=n_runs, dimnames=mynames)
+valid_sens<-matrix(nrow=ncol(traits_AOA3), ncol=n_runs, dimnames=mynames)
+valid_spec<-matrix(nrow=ncol(traits_AOA3), ncol=n_runs, dimnames=mynames)
+#Create the matrices for the ancestral state predictions
+valid_acc_pic<-matrix(nrow=ncol(traits_AOA3), ncol=n_runs, dimnames=mynames)
+valid_sens_pic<-matrix(nrow=ncol(traits_AOA3), ncol=n_runs, dimnames=mynames)
+valid_spec_pic<-matrix(nrow=ncol(traits_AOA3), ncol=n_runs, dimnames=mynames)
+#I start running the validations
+for (j in 1:n_runs){
+print(paste("run",j))
+#Clean tree and make it match with the trait table 
+traits_AOA3_val<-traits_AOA3#We start from the trait table of the genomes
+if(same_tree==TRUE){tree_AOA_val<-tree_AOA_ps2} else{tree_AOA_val<-tree_AOA}
+tree_AOA2_val<-drop.tip(tree_AOA_val,tree_AOA_val$tip.label[!(tree_AOA_val$tip.label%in%rownames(traits_AOA3_val))])
+#Arrange the trait table order to match the tip label order
+spmatch2_val<-match(tree_AOA2_val$tip.label, rownames(traits_AOA3_val))
+traits_AOA4_val<-traits_AOA3_val[spmatch2_val,]
+#Create the train and test dataset. They are used for both PEM and ASR
+train_val=sample(1:nrow(traits_AOA4_val),134, replace=FALSE)#This is the train dataset containing 80% of the genomes
+observed_val=traits_AOA4_val[-train_val,]#These are the test observations (n=34). by selecting them like this I keep the rowname
+traits_AOA4_val[-train_val,]<-NA#I make the test dataset unknown, which equals to eliminating them from the training dataset.
+#Run the PEM predictions
+AOA_pred_val<-pred_phyl_glmnet(traits=traits_AOA4_val,tree=tree_AOA2_val,opt.lam=TRUE, opt.thres=TRUE)
+#Export the predictions to compute accuracy, sensitivity and specificity
+predictions_val<-data.frame(lapply(AOA_pred_val$predictions, function (x) x[["pred_class"]]))
+#We obtain the accuracy of the predictions for both the genes and the genomes
+val_genomes<-c()
+val_genes<-c()
+if(identical(rownames(predictions_val), rownames(observed_val))){
+  for(i in 1:nrow(predictions_val)){
+    val_genomes[i]<-mean(observed_val[i,]==predictions_val[i,])  
+  }
+  for(i in 1:ncol(predictions_val)){
+    val_genes[i]<-mean(observed_val[,i]==predictions_val[,i])
+  }
+  #mean(val_genomes)
+  #mean(val_genes)
+  } else {print("rownames do not match")}
+mean(val_genes)
+#Sensitivity and specificity
+sensit<-c()
+specif<-c()
+for(i in 1:ncol(predictions_val)){
+  if(length(levels(as.factor(observed_val[,i])))==1){
+  sensit[i]<-NA
+  specif[i]<-NA
+  }else{
+  test<-suppressMessages(roc(response=observed_val[,i], predictor=predictions_val[,i], direction="<"))
+  sensit[i]<-coords(test, x=1, input="threshold", ret="sensitivity")[1,1]
+  specif[i]<-coords(test, x=1, input="threshold", ret="specificity")[1,1]
+  }
+  }
+#Compile the values of accuracy, sensitivity and specificity
+valid_acc[,j]<-val_genes
+valid_sens[,j]<-sensit
+valid_spec[,j]<-specif
+
+#Run the ASR predictions
+traits_AOA4_picante<-traits_AOA4_val[train_val,]#Trait table with only the genomes included in the training dataste
+tree_AOA2_picante<-tree_AOA_ps2#Tree with only the genomes
+picante_acc<-c()#Create vectors to compile accuracy, sensitivity and accuracy
+picante_sens<-c()
+picante_spec<-c()
+#Run ASR
+for (i in 1:ncol(traits_AOA4_picante)){
+test_trait<-traits_AOA4_picante[,i]
+names(test_trait)<-rownames(traits_AOA4_picante)
+picante_predictions<-phyEstimateDisc(tree_AOA2_picante,test_trait)
+#Calculate accuracy
+if(identical(rownames(picante_predictions), rownames(observed_val))==TRUE){
+picante_acc[i]<-mean(observed_val[,i]==picante_predictions$estimated.state)
+#Calculate sensitivity and specificity
+  if(length(levels(as.factor(observed_val[,i])))==1){
+  sensit[i]<-NA
+  specif[i]<-NA
+  }else{
+  test_pic<-suppressMessages(roc(response=observed_val[,i], predictor=as.numeric(picante_predictions$estimated.state), direction="<"))
+  picante_sens[i]<-coords(test_pic, x=1, input="threshold", ret="sensitivity")[1,1]
+  picante_spec[i]<-coords(test_pic, x=1, input="threshold", ret="specificity")[1,1]
+  }
+}
+}
+mean(picante_acc)
+valid_acc_pic[,j]<-picante_acc
+valid_sens_pic[,j]<-picante_sens
+valid_spec_pic[,j]<-picante_spec
+}
+#Compile final results
+#Accuracy by gene for PEM and ASR
+val_accuracy_genes<-data.frame(apply(valid_acc, 1, mean))
+val_accuracy_genes_pic<-data.frame(apply(valid_acc_pic, 1, mean))
+#Sensitivity by gene for PEM and ASR
+valid_sens_clean<-valid_sens[,colSums(is.na(valid_sens))==0, drop=FALSE]
+val_sensitivity_genes<-data.frame(apply(valid_sens_clean, 1, mean))
+valid_sens_clean_pic<-valid_sens_pic[,colSums(is.na(valid_sens_pic))==0, drop=FALSE]
+val_sensitivity_genes_pic<-data.frame(apply(valid_sens_clean_pic, 1, mean))
+#Specificity by gene
+valid_spec_clean<-valid_spec[,colSums(is.na(valid_spec))==0, drop=FALSE]
+val_specificity_genes<-data.frame(apply(valid_spec_clean, 1, mean))
+valid_spec_clean_pic<-valid_spec_pic[,colSums(is.na(valid_spec_pic))==0, drop=FALSE]
+val_specificity_genes_pic<-data.frame(apply(valid_spec_clean_pic, 1, mean))
+
+#Results grouped by genes
+results_validation<-matrix(ncol=6, nrow=nrow(val_accuracy_genes))
+rownames(results_validation)<-rownames(val_accuracy_genes)
+colnames(results_validation)<-c("PEM_accuracy", "ASR_accuracy", "PEM_sensitivity", "ASR_sensitivity", "PEM_specificity", "ASR_specificity")
+results_validation[,1]<-val_accuracy_genes[,1]
+results_validation[,2]<-val_accuracy_genes_pic[,1]
+results_validation[,3]<-val_sensitivity_genes[,1]
+results_validation[,4]<-val_sensitivity_genes_pic[,1]
+results_validation[,5]<-val_specificity_genes[,1]
+results_validation[,6]<-val_specificity_genes_pic[,1]
+results_validation
+#Total
+apply(results_validation, 2,mean)
+```
+
+
+# Export genome data and predictions on AOA taxa
+We export the genomes data and the predictions to display them on the phylogenetic trees
+
+```{r message=FALSE, warning=FALSE}
+#Objects are created. Export them with the write.table function
+#1. Genomes
+#Grouping the genes by function
+Nitrogen<-c("Amt.1", "Amt.2", "Amt.3", "ureC")
+CAA<-c("metE", "metE_2", "proDH", "RocA")
+motility<-c("cheA", "cheY", "cheY_2","TadC", "flaK","flal")
+adaptation<-c("ipct", "nhap", "trk", "cspc")
+#Genome content by function
+N_met<-genomes_classified[,c("name",Nitrogen)]
+CAA_met<-genomes_classified[,c("name",CAA)]
+mot_che<-genomes_classified[,c("name",motility)]
+adapt<-genomes_classified[,c("name",adaptation)]
+
+#2. Predictions
+predicted_genes<-data.frame(lapply(AOA_predictions_opt$predictions, function (x) x[["pred_class"]]))
+predicted_genes$name<-rownames(predicted_genes)
+taxonomy_predictions<-join(alves_seqs_classified, predicted_genes, by="name")
+#Gene content for the taxa of the phylogeny
+N_met_pred<-taxonomy_predictions[,c("name",Nitrogen)]
+CAA_met_pred<-taxonomy_predictions[,c("name",CAA)]
+mot_che_pred<-taxonomy_predictions[,c("name",motility)]
+adapt_pred<-taxonomy_predictions[,c("name",adaptation)]
+
+```
+
+
+# Genome completeness vs accuracy, sensitivity and specificity
+accuracy, sensitivity and specificity of the predictions is associated with the completeness of the genome
+```{r}
+#Compiling info from LOOCV for each genome
+comp_test<-pred_info_genomes
+comp_test$Accession<-rownames(comp_test)#Create field to join with genome information
+total_info_genomes<-join(comp_test, traits_AOA, by="Accession")#Join predictions and genome info
+#Plot for accuracy
+ggplot(total_info_genomes, aes(x=completeness, y=accuracy_genomes))+geom_point(alpha=0.5)+geom_smooth(method=lm, se=FALSE)+
+  xlab("completeness") +
+  ylab("Accuracy") +
+  theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))
+#Plot for sensitivity
+ggplot(total_info_genomes, aes(x=completeness, y=sensitivity_genomes))+geom_point(alpha=0.5)+geom_smooth(method=lm, se=FALSE)+
+  xlab("completeness") +
+  ylab("Sensitivity") +
+  theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))
+#Plot for specificity
+ggplot(total_info_genomes, aes(x=completeness, y=specificity_genomes))+geom_point(alpha=0.5)+geom_smooth(method=lm, se=FALSE)+
+  xlab("completeness") +
+  ylab("specificity") +
+  theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))
+
+
+```
+
+
+# Phylogenetic signal vs accuracy
+```{r}
+#If rows from phylogenetic signal, accuracy pem and accuracy asr are in same order, merge them
+if(identical(rownames(phyl_signal_genes), rownames(val_accuracy_genes))==TRUE&identical(rownames(val_accuracy_genes),rownames(val_accuracy_genes_pic))){sign_acc<-cbind(phyl_signal_genes[,1, drop=FALSE],val_accuracy_genes[,1, drop=FALSE]*100,val_accuracy_genes_pic[,1, drop=FALSE]*100)} else{print("merge data after ordering rows")}
+colnames(sign_acc)<-c("D", "acc_pem", "acc_asr")#rename columns
+#Plot correlation for pem
+ggplot(sign_acc, aes(x=D, y=acc_pem))+geom_point(alpha=0.5)+geom_smooth(method=lm, se=FALSE)+
+  xlab("D") +
+  ylab("Accuracy %") +
+  theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))
+#Plot correlation for asr
+ggplot(sign_acc, aes(x=D, y=acc_asr))+geom_point(alpha=0.5)+geom_smooth(method=lm, se=FALSE)+
+  xlab("D") +
+  ylab("Accuracy %") +
+  theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))
+
+```
+
+
+Save image for the next chunk if needed
+
+```{r}
+#save.image(file=paste( "./environments/","global_env_01",".RData", sep=""))
+```
+
+

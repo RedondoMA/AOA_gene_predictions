@@ -1,0 +1,458 @@
+Accession	source	Genome Name / Sample Name	completeness	contamination	Phylum	Amt-1	Amt-2	Amt-3	ureC	cspc	ipct	nhap	trk	metE	metE_2	flaK	cheA	cheY	cheY_2	TadC	flal	proDH	RocA
+2716884905	img	Thaumarchaeota archaeon SCGC AC-337_L13v2 (contamination screened)	22.2	0	Thaumarchaeota	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+2510065023	img	Candidatus Nitrososphaera gargensis Ga9-2	94.9	2.6	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	1	1	1	1	1	1	1	1
+2786546742	img	Nitrosopumilales archaeon CG_4_10_14_0_8_um_filter_34_8	80.9	0.5	Thaumarchaeota	1	1	0	1	1	0	0	1	0	0	1	0	1	1	0	1	1	1
+2657244923	img	Nitrosocosmicus oleophilus MY3	90.7	1	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+2788500263	img	Candidatus Nitrosocaldus islandicus	90.7	0.5	Thaumarchaeota	1	0	1	1	0	0	1	0	1	1	1	1	1	0	1	1	1	1
+2579779048	img	Thaumarchaeota archaeon MY2	92.8	2.1	Thaumarchaeota	1	1	0	0	0	0	1	1	0	0	1	1	1	1	1	1	1	1
+2706794827	img	Marine archaeal group 1 JGI ETNP_125m_188_A04 (contamination screened)	8.8	0	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+2757320681	img	Candidatus Nitrosotalea devanaterra NDEV1	91.2	0.5	Thaumarchaeota	1	1	0	0	0	0	1	0	0	0	1	1	1	1	1	1	1	1
+2706794805	img	Marine archaeal group 1 JGI GoM_1470m_185_A05 (contamination screened)	63.4	0.5	Thaumarchaeota	1	0	0	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0
+2657245244	img	Thaumarchaeota archaeon SCGC AC-312_C19v2 (contamination screened)	41.8	0	Thaumarchaeota	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+2775506854	img	Nitrosotalea bavarica SbT1	91.2	0.5	Thaumarchaeota	1	0	0	0	0	0	0	0	0	0	1	0	1	1	1	1	1	1
+2502545036	img	Candidatus Nitrosopumilus sp. BD31	87.6	0.5	Thaumarchaeota	1	1	0	0	1	1	1	1	0	0	1	1	1	1	1	1	1	1
+2778260922	img	uncultured Candidatus Nitrosotenuis sp. bin71	68.1	2.1	Thaumarchaeota	0	0	0	0	0	0	1	0	0	0	1	0	0	0	1	1	1	1
+2648501537	img	Thaumarchaeota archaeon SCGC AB-663-F14 (contamination screened)	27.3	0	Thaumarchaeota	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0
+2627854092	img	Nitrosopumilus adriaticus NF5	92.3	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	1	1	1	1	1	1	1
+2786546741	img	Nitrosopumilales archaeon CG_4_9_14_0_2_um_filter_34_16	73.7	0	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+2651870209	img	Nitrosopelagicus sp. REDSEA-S31_B2	83.5	0.5	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+2657245301	img	Thaumarchaeota archaeon SCGC AD-305-F05 - v2 (unscreened)	73.2	0.5	Thaumarchaeota	1	1	0	0	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+2731639234	img	Marine group I.1a Thaumarchaeota archaeon SCGC AG-485_D14 (contamination screened)	32	0	Thaumarchaeota	0	0	0	0	1	0	0	0	0	0	0	0	1	1	0	0	0	0
+2660238809	img	Thaumarchaeota AK31 archaeon AG-122-L20 (unscreened)	29.4	0	Thaumarchaeota	0	0	0	0	0	0	1	0	1	1	1	0	0	0	0	1	1	1
+2757320762	img	Candidatus Nitrosomarinus catalina SPOT01	92.3	0.5	Thaumarchaeota	1	1	0	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0
+2636415618	img	Marine Group I thaumarchaeote SCGC AAA799-D11 (unscreened)	77.3	0	Thaumarchaeota	1	1	0	0	1	0	1	0	0	0	1	0	1	1	0	0	1	1
+2731639232	img	Marine group I.1a Thaumarchaeota archaeon SCGC AG-485_G20 (contamination screened)	38.7	0	Thaumarchaeota	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+2657244912	img	Thaumarchaeota AK31 archaeon AG-122-D18 (contamination screened)	29.9	0	Thaumarchaeota	0	0	0	1	0	0	1	0	0	0	0	0	1	1	0	0	0	0
+2681813472	img	putative Thaumarchaeota genus Nitrosopumilus sp. v2 (bin U_52366)	81.9	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	1	1	0	1	0	0
+2648501530	img	Thaumarchaeota archaeon SCGC AAA282-K18 (contamination screened)	70.1	0.5	Thaumarchaeota	0	0	0	1	1	0	1	1	0	0	1	0	1	0	0	0	0	0
+2786546486	img	Thaumarchaeota archaeon SP139	56.2	0.5	Thaumarchaeota	1	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+2775506851	img	Nitrosotalea okcheonensis CS NCS1	92.3	0.5	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	1	1	1	1	1	1	1	1
+2786546737	img	Nitrosopumilales archaeon CG15_BIG_FIL_POST_REV_8_21_14_020_33_23	46.4	0	Thaumarchaeota	1	0	0	0	1	0	1	1	0	0	0	0	1	1	1	1	1	1
+2518645532	img	Candidatus Nitrosopumilus koreensis AR1	86.1	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+2627853696	img	Nitrosopumilus piranensis D3C	92.8	0.5	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	1	0	1	1	1	1	1	1
+2634166682	img	Thaumarchaeota archaeon SCGC AD-103-C20 (unscreened)	65.4	0.5	Thaumarchaeota	0	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+2657245308	img	Thaumarchaeota archaeon SCGC AC-312_F15 - v2 (contamination screened)	43.3	0	Thaumarchaeota	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+2603880166	img	Candidatus Nitrosocosmicus exaquare G61	89.7	1	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+2706794823	img	Marine archaeal group 1 JGI GoM_375m_188_E10 (contamination screened)	80.9	0.5	Thaumarchaeota	1	0	0	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0
+2527291500	img	Thaumarchaeota archaeon SCGC AAA007-O23 (contamination screened)	86.1	2.1	Thaumarchaeota	1	0	0	0	1	0	1	0	1	1	0	0	0	0	0	0	0	0
+2654587877	img	unclassified Nitrosopumilaceae Bin 71	79.4	2.1	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	0	0	0	0	0
+2660238811	img	Thaumarchaeota archaeon SCGC AC-312_G05 - v2 (unscreened)	19.6	0	Thaumarchaeota	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+2786546490	img	Thaumarchaeota archaeon NP142	85.6	2.1	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	0
+2651870212	img	Nitrosopelagicus sp. REDSEA-S43_B1	74.2	2.6	Thaumarchaeota	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+2651870205	img	Nitrosopelagicus sp. REDSEA-S08_B1	45.9	3.1	Thaumarchaeota	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+2663763547	img	Thaumarchaeota archaeon SCGC AD-308-D05v2 (contamination screened)	66.5	0	Thaumarchaeota	0	1	0	0	1	0	1	0	0	0	0	0	1	1	0	0	0	1
+2626541593	img	Uncultured Thaumarcheaota bin 8	89.7	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	1	0	0	0	0	1
+2716884885	img	Thaumarchaeota archaeon SCGC AC-337_F14v2 (unscreened)	32.4	1	Thaumarchaeota	0	0	0	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0
+2663762694	img	Nitrosopumilales archaeon AG-122-B02 (unscreened)	42.8	1	Thaumarchaeota	1	1	0	0	0	0	0	0	0	0	1	1	1	1	1	1	1	1
+2537561915	img	Nitrosoarchaeum limnia BG20	82.5	2.1	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	1	1	1	1	1	1	1
+2690315682	img	Nitrosopumilus sp. Nsub	92.3	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	1	1	1	1	1	0	0
+2634166670	img	Thaumarchaeota archaeon SCGC AC-728-E05 (unscreened)	66.5	0.5	Thaumarchaeota	1	0	0	0	1	1	1	0	1	1	0	0	0	0	0	0	1	1
+2585427666	img	Candidatus Nitrososphaera evergladensis SR1	94.3	3.1	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	1	1	1	1	1	1	1	1
+2721755881	img	Thaumarchaeota archaeon JGI 01_B9 (contamination screened)	33	0	Thaumarchaeota	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+2630968656	img	Marine Group I thaumarchaeote RSA3 (unscreened)	87.2	5.2	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	0	1	1
+2657244911	img	Thaumarchaeota AK31 archaeon AG-122-D18 (unscreened)	45.4	0	Thaumarchaeota	0	0	0	1	0	0	1	0	1	1	0	0	1	1	0	0	1	1
+2657245302	img	Thaumarchaeota archaeon SCGC AD-305-F05 - v2 (contamination screened)	73.2	0.5	Thaumarchaeota	1	1	0	0	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+2651869505	img	Candidatus Nitrosotenuis aquarius AQ6f complete genome	92.2	1	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	1	1	1	1	1	1	1	1
+2518645576	img	Candidatus Nitrosopumilus sediminis AR2	89.7	0.5	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	0	0	1	1	1	1	1	1
+2681813470	img	putative Thaumarchaeota genus Nitrosopumilus sp. v2 (bin U_52180)	89.2	0.5	Thaumarchaeota	1	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0
+2663763551	img	Thaumarchaeota archaeon SCGC AC-312_J09v2 (contamination screened)	87.6	0.5	Thaumarchaeota	1	0	0	0	1	1	1	0	1	1	0	0	0	0	0	0	0	0
+2634166810	img	Thaumarchaeota archaeon SCGC AC-337-E14 (unscreened)	85.6	0	Thaumarchaeota	1	0	0	1	1	1	1	0	1	1	0	0	0	0	0	0	0	0
+2880827348	img	uncultured Thaumarchaeota SCGC SAG AB-747_D17 decontaminated	32.5	0	Thaumarchaeota	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+2585428036	img	Marine Group I thaumarchaeote SCGC AAA799-N04 (unscreened)	69.6	0.5	Thaumarchaeota	0	1	0	0	1	0	1	1	0	0	0	0	1	1	1	0	1	1
+2639762712	img	Marine Group I crenarchaeon SCGC AB-629-I23 - v2 (unscreened)	83	0.5	Thaumarchaeota	0	0	0	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0
+2619619229	img	Thaumarchaeota archaeon N4	93.3	2.1	Thaumarchaeota	1	1	0	0	0	0	1	1	0	0	1	1	1	1	1	1	1	1
+2634166697	img	Thaumarchaeota archaeon SCGC AD-259-M03 (unscreened)	53.1	0.5	Thaumarchaeota	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+2516493037	img	Candidatus Nitrosopumilus salaria BD31	79.9	0	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	1	1	0	1
+2775506846	img	Nitrosotalea sinensis Nd2 NSIN	92.3	0.5	Thaumarchaeota	1	1	0	0	0	0	1	0	0	0	1	0	1	1	1	1	1	1
+2687453665	img	Thaumarchaeota archaeon SCGC AC-337_L13v2 (unscreened)	25.8	0	Thaumarchaeota	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+2651870211	img	Nitrosopelagicus sp. REDSEA-S37_B6	80.4	0	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+2630968793	img	Candidatus Nitrosopelagicus brevis CN25	93.8	0.5	Thaumarchaeota	1	1	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+2657245245	img	Thaumarchaeota archaeon SCGC AC-312_C19v2 (unscreened)	42.8	0	Thaumarchaeota	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+2663762695	img	Nitrosopumilales archaeon AG-122-B02 (contamination screened)	38.6	0.5	Thaumarchaeota	1	0	0	0	0	0	0	0	0	0	1	1	1	1	1	1	1	1
+2660238810	img	Thaumarchaeota AK31 archaeon AG-122-L20 (contamination screened)	17	0	Thaumarchaeota	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	1	1
+2786546739	img	Nitrosopumilales archaeon CG11_big_fil_rev_8_21_14_0_20_33_24	43.8	1	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	1	0	1	1
+2718217702	img	Candidatus Nitrosocosmicus exaquare G61	89.7	1	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+2634166754	img	Thaumarchaeota archaeon SCGC AAA286-D17 (unscreened)	75.3	0	Thaumarchaeota	1	0	0	0	1	1	1	0	1	1	0	0	0	0	0	0	0	0
+2585427612	img	Nitrososphaera viennensis EN76	94.9	2.1	Thaumarchaeota	1	1	0	1	0	0	0	0	0	0	1	1	1	1	1	1	1	1
+2706794841	img	Marine archaeal group 1 JGI GoM_1470m_185_E01 (contamination screened)	53.6	0.5	Thaumarchaeota	1	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0	1	1
+2724679685	img	Thaumarchaeota archaeon JGI 02_H7 (contamination screened)	38.1	0	Thaumarchaeota	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0
+2706794893	img	Marine archaeal group 1 JGI GoM_1470m_185_F01 (contamination screened)	58.2	0.5	Thaumarchaeota	0	0	0	0	1	0	0	0	1	1	0	0	0	0	0	0	1	1
+2781125712	img	uncultured Candidatus Nitrosotenuis sp. bin41	77.8	7.7	Thaumarchaeota	1	1	0	0	0	0	1	0	0	0	0	0	1	1	0	0	1	1
+2657245293	img	Thaumarchaeota archaeon SCGC AC-312_A11 - v2 (contamination screened)	55.7	0	Thaumarchaeota	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0
+2786546487	img	Thaumarchaeota archaeon SAT137	77.8	1	Thaumarchaeota	1	0	0	0	0	0	1	1	1	1	0	0	0	0	0	0	0	1
+2657245307	img	Thaumarchaeota archaeon SCGC AC-312_F15 - v2 (unscreened)	46.9	0	Thaumarchaeota	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+2716884235	img	Thaumarchaeota archaeon SCGC AG-293-C20	52.6	0.5	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	1	1	0	0	1	1
+2529292698	img	Marine Group I thaumarchaeote SCGC AAA160-J20 (unscreened)	35.1	0	Thaumarchaeota	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+2728369526	img	Nitrosopumilus sp. AR	91.2	83	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	1	0	1	1	1	1	1	1
+2657245294	img	Thaumarchaeota archaeon SCGC AC-312_A11 - v2 (unscreened)	58.2	0	Thaumarchaeota	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0
+2648501536	img	Thaumarchaeota archaeon SCGC AB-661-M19 (contamination screened)	39.7	0	Thaumarchaeota	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+2548876507	img	Nitrosopumilus sp. SJ	89.7	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+2630968650	img	Thaumarchaeota archaeon SAT1	92.8	1	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	1	1	1	1	1	1	1	1
+2684622838	img	Thaumarchaeota archaeon SCGC AC-337_F14v2 (contamination screened)	31.9	1	Thaumarchaeota	0	0	0	0	0	1	0	0	1	1	0	0	0	0	0	0	0	0
+2651870207	img	Nitrosopelagicus sp. REDSEA-S25_B3	68	3.1	Thaumarchaeota	1	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+2636415972	img	Thaumarchaeota archaeon SCGC AD-311-O21 (contamination screened)	69.1	0.5	Thaumarchaeota	0	1	0	0	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+2731639255	img	Marine group I.1a Thaumarchaeota archaeon SCGC AG-487_K17 (contamination screened)	34	0	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+2651870208	img	Nitrosopelagicus sp. REDSEA-S27_B13N2	62.9	1	Thaumarchaeota	1	0	0	1	1	0	1	0	1	1	0	0	0	0	0	0	0	0
+2634166691	img	Thaumarchaeota archaeon SCGC AD-117-G06 (unscreened)	47.4	0	Thaumarchaeota	0	0	0	1	1	0	1	0	1	1	0	0	0	0	0	0	0	0
+2663763548	img	Thaumarchaeota archaeon SCGC AD-308-D05v2 (unscreened)	66.5	0	Thaumarchaeota	0	1	0	0	1	0	1	0	0	0	0	0	1	1	0	0	0	1
+2634166661	img	Thaumarchaeota archaeon SCGC AC-665-F20 (unscreened)	81.4	0.5	Thaumarchaeota	1	0	0	0	1	1	1	0	1	1	0	0	0	0	0	0	0	0
+2786546740	img	Nitrosopumilales archaeon CG_4_9_14_0_8_um_filter_34_10	85.6	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	1	1
+2698536741	img	unclassified Thaumarchaeota archaeon bin19	90.8	2.1	Thaumarchaeota	1	1	0	1	0	0	0	0	0	0	0	0	1	1	0	0	1	1
+2716884236	img	Thaumarchaeota archaeon SCGC AG-159-M13	31.9	1	Thaumarchaeota	1	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0
+2636415725	img	uncultured crenarchaeote	93.8	86.1	Crenarchaeota	1	1	0	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0
+2513237066	img	Marine Group I crenarchaeote sp. SCGC AAA288-I14 (unscreened)	68.6	0	Crenarchaeota	1	0	0	0	1	1	1	0	1	1	0	0	0	0	0	0	0	0
+2513237068	img	Marine Group I crenarchaeote sp. SCGC AAA007-N19 (unscreened)	58.2	0	Crenarchaeota	1	0	0	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0
+2524023105	img	Marine Group I thaumarchaeote sp. SCGC AAA288-P18 (unscreened)	23.2	0.5	Crenarchaeota	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0
+2513237065	img	Marine Group I crenarchaeote sp. SCGC AAA288-J14 (unscreened)	38.6	0.5	Crenarchaeota	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0
+GCA_001917505.1	ncbi	Thaumarchaeota archaeon 13_1_40CM_38_12	75.2	0.5	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	1	0	1	1	1	0	1	1
+GCA_001917965.1	ncbi	Thaumarchaeota archaeon 13_1_40CM_4_48_7	60.8	1	Thaumarchaeota	0	0	0	0	0	0	0	1	0	0	0	0	1	1	0	0	0	0
+GCA_001917995.1	ncbi	Thaumarchaeota archaeon 13_1_40CM_4_38_7	69.1	0.5	Thaumarchaeota	1	0	0	0	0	0	0	0	1	1	1	0	1	1	1	1	1	1
+GCA_001918455.1	ncbi	Thaumarchaeota archaeon 13_1_40CM_3_50_5	69.6	4.1	Thaumarchaeota	1	0	0	0	0	0	1	1	0	0	0	0	1	0	1	1	0	1
+GCA_001918475.1	ncbi	Thaumarchaeota archaeon 13_1_40CM_3_38_6	72.2	3.6	Thaumarchaeota	1	0	0	1	0	0	0	0	1	1	1	0	1	1	1	0	1	1
+GCA_001918975.1	ncbi	Thaumarchaeota archaeon 13_1_40CM_2_39_13_2	37.6	0	Thaumarchaeota	1	0	0	0	0	0	0	0	1	1	1	0	1	1	1	1	0	1
+GCA_001919295.1	ncbi	Thaumarchaeota archaeon 13_1_40CM_2_39_4	23.2	1	Thaumarchaeota	1	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	1
+GCA_001920395.1	ncbi	Thaumarchaeota archaeon 13_1_20CM_2_39_20	56.2	0.5	Thaumarchaeota	1	0	0	0	0	0	0	0	1	1	1	0	1	1	1	0	0	1
+GCA_001443365.1	ncbi	Thaumarchaeota archaeon CSP1-1	91.7	0.5	Thaumarchaeota	1	0	0	0	1	0	0	0	0	0	1	1	1	1	1	1	1	1
+GCA_001510225.1	ncbi	Thaumarchaeota archaeon casp-thauma1	85.1	0	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_001510275.1	ncbi	Thaumarchaeota archaeon casp-thauma3	87.1	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_001510295.1	ncbi	Thaumarchaeota archaeon casp-thauma4	61.3	0.5	Thaumarchaeota	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_001914355.1	ncbi	Thaumarchaeota archaeon BIN5	33	0	Thaumarchaeota	1	1	0	0	0	0	0	1	0	0	0	1	1	1	1	1	1	1
+GCA_003724215.1	ncbi	Thaumarchaeota archaeon S14	71.1	0.5	Thaumarchaeota	0	0	0	0	0	0	1	1	0	0	0	0	1	0	0	1	0	0
+GCA_003724275.1	ncbi	Thaumarchaeota archaeon S13	77.3	0.5	Thaumarchaeota	1	0	0	0	0	0	1	1	0	0	0	0	1	0	1	1	0	0
+GCA_016872055.1	ncbi	Thaumarchaeota archaeon	89.1	1	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	0	0	0	0	0	0	1	1
+GCA_002737455.1	ncbi	Thaumarchaeota archaeon	90.7	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_002317795.1	ncbi	Thaumarchaeota archaeon	88.7	2.6	Thaumarchaeota	1	0	0	0	1	0	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_005877385.1	ncbi	Thaumarchaeota archaeon	89.7	3.1	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	1	0	0	0	1	1
+GCA_016201435.1	ncbi	Thaumarchaeota archaeon	86.6	5.2	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	1	0	1	1	1	1	1	1
+GCA_016215465.1	ncbi	Thaumarchaeota archaeon	89.7	2.1	Thaumarchaeota	1	1	0	0	0	1	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_016201515.1	ncbi	Thaumarchaeota archaeon	83	0.5	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	1	1	1	1	1	1	1	1
+GCA_005877205.1	ncbi	Thaumarchaeota archaeon 	89.7	0.5	Thaumarchaeota	1	0	0	0	0	0	0	0	1	1	1	0	1	1	1	1	1	1
+GCA_018658785.1	ncbi	Thaumarchaeota archaeon	83.5	0.5	Thaumarchaeota	0	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_005877475.1	ncbi	Thaumarchaeota archaeon	85.6	0.5	Thaumarchaeota	1	0	0	0	0	0	0	0	1	1	1	0	1	1	1	1	1	1
+GCA_018671875.1	ncbi	Thaumarchaeota archaeon	81.9	1	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_016178405.1	ncbi	Thaumarchaeota archaeon	84	4.6	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	1	1	1	1	1	1	1	1
+GCA_016871955.1	ncbi	Thaumarchaeota archaeon	46.9	1.5	Thaumarchaeota	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	1
+GCA_018657705.1	ncbi	Thaumarchaeota archaeon	85.6	2.6	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_018661975.1	ncbi	Thaumarchaeota archaeon	84.5	1.5	Thaumarchaeota	0	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_005877075.1	ncbi	Thaumarchaeota archaeon	85.6	2.1	Thaumarchaeota	1	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	1	1
+GCA_010028435.1	ncbi	Thaumarchaeota archaeon	88.1	1	Thaumarchaeota	1	1	0	1	0	1	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_003176995.1	ncbi	Thaumarchaeota archaeon	90.8	2.1	Thaumarchaeota	1	1	0	1	0	0	0	0	0	0	0	0	1	1	0	0	1	1
+GCA_018647405.1	ncbi	Thaumarchaeota archaeon	84.5	3.1	Thaumarchaeota	0	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_010028425.1	ncbi	Thaumarchaeota archaeon	88.1	1.5	Thaumarchaeota	1	1	0	1	0	1	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_016871975.1	ncbi	Thaumarchaeota archaeon	80.4	0.5	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	1	1
+GCA_018674995.1	ncbi	Thaumarchaeota archaeon	81.5	2.1	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_018698115.1	ncbi	Thaumarchaeota archaeon	82.5	0.5	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_018669145.1	ncbi	Thaumarchaeota archaeon	84.1	5.2	Thaumarchaeota	0	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_010030525.1	ncbi	Thaumarchaeota archaeon	55.1	0.5	Thaumarchaeota	0	1	0	1	0	1	0	0	0	0	1	0	1	1	1	1	1	1
+GCA_018700295.1	ncbi	Thaumarchaeota archaeon	76.2	1.5	Thaumarchaeota	1	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_018655005.1	ncbi	Thaumarchaeota archaeon	83.5	3.1	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_018659865.1	ncbi	Thaumarchaeota archaeon	71.6	1.5	Thaumarchaeota	1	1	0	1	1	0	1	0	0	0	0	0	1	0	0	0	0	0
+GCA_005877305.1	ncbi	Thaumarchaeota archaeon	80.9	0.5	Thaumarchaeota	1	0	0	1	0	0	0	0	1	1	0	0	1	1	0	0	1	1
+GCA_018668425.1	ncbi	Thaumarchaeota archaeon	77.3	1	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_005877115.1	ncbi	Thaumarchaeota archaeon	79.9	0.5	Thaumarchaeota	1	0	0	0	0	0	0	0	1	1	1	0	1	1	1	1	1	1
+GCA_016126025.1	ncbi	Thaumarchaeota archaeon	89.2	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	1	1	1	1	0	1
+GCA_018650315.1	ncbi	Thaumarchaeota archaeon	84	3.6	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_018263495.1	ncbi	Thaumarchaeota archaeon	71.1	0.5	Thaumarchaeota	1	0	0	0	1	0	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_005877295.1	ncbi	Thaumarchaeota archaeon	81.9	0.5	Thaumarchaeota	0	0	0	0	0	0	0	0	1	1	1	0	1	1	1	1	1	1
+GCA_005877345.1	ncbi	Thaumarchaeota archaeon	66.4	1.5	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+GCA_004195455.1	ncbi	Thaumarchaeota archaeon	63.9	22.7	Thaumarchaeota	1	0	0	1	0	0	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_005877195.1	ncbi	Thaumarchaeota archaeon	78.3	1	Thaumarchaeota	1	0	0	1	0	0	0	1	0	0	1	0	1	1	1	1	1	1
+GCA_003193945.1	ncbi	Thaumarchaeota archaeon	76.3	29.4	Thaumarchaeota	1	0	0	1	0	1	1	0	1	1	0	0	0	0	0	0	1	1
+GCA_005877105.1	ncbi	Thaumarchaeota archaeon	65.4	0.5	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+GCA_016200035.1	ncbi	Thaumarchaeota archaeon	72.2	2.6	Thaumarchaeota	1	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	1	1
+GCA_012928585.1	ncbi	Thaumarchaeota archaeon	70.6	0	Thaumarchaeota	1	0	0	0	0	0	1	1	1	1	0	0	0	0	0	0	0	1
+GCA_005877095.1	ncbi	Thaumarchaeota archaeon	57.8	2.1	Thaumarchaeota	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_005877315.1	ncbi	Thaumarchaeota archaeon	62.9	0.5	Thaumarchaeota	1	0	0	0	0	0	0	0	1	1	1	0	1	1	1	1	1	1
+GCA_005877085.1	ncbi	Thaumarchaeota archaeon	56.2	1	Thaumarchaeota	0	0	0	1	0	0	0	0	0	0	1	0	1	1	1	1	1	1
+GCA_003972945.1	ncbi	Thaumarchaeota archaeon	40.2	2.6	Thaumarchaeota	0	0	0	1	0	0	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_005877175.1	ncbi	Thaumarchaeota archaeon	62.4	0	Thaumarchaeota	0	0	0	0	0	0	0	0	1	1	0	0	1	1	0	0	1	1
+GCA_016223285.1	ncbi	Thaumarchaeota archaeon	64.4	1	Thaumarchaeota	1	1	0	0	0	0	1	1	0	0	1	0	1	1	1	1	1	1
+GCA_003695185.1	ncbi	Thaumarchaeota archaeon	73.7	1	Thaumarchaeota	0	0	0	0	0	0	1	0	1	1	1	0	1	1	1	1	0	1
+GCA_016880675.1	ncbi	Thaumarchaeota archaeon	54.1	4.1	Thaumarchaeota	0	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_013390475.1	ncbi	Marine Group I thaumarchaeote	92.8	3.1	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	1	0	1	0	0	0	1	1
+GCA_013390745.1	ncbi	Marine Group I thaumarchaeote	81.4	0.5	Thaumarchaeota	1	0	0	0	1	1	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_013390485.1	ncbi	Marine Group I thaumarchaeote	90.2	3.1	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	1	0	1	0	0	0	1	1
+GCA_013390865.1	ncbi	Marine Group I thaumarchaeote	90.8	2.1	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	1	0	1	0	0	0	1	1
+GCA_013390855.1	ncbi	Marine Group I thaumarchaeote	89.7	2.6	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	1	0	1	0	0	0	1	1
+GCA_013390785.1	ncbi	Marine Group I thaumarchaeote	78.4	0	Thaumarchaeota	1	0	0	1	1	0	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_013390905.1	ncbi	Marine Group I thaumarchaeote	91.8	2.6	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	1	0	1	0	0	0	1	1
+GCA_013390395.1	ncbi	Marine Group I thaumarchaeote	91.8	3.1	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	1	0	1	0	0	0	1	1
+GCA_013390875.1	ncbi	Marine Group I thaumarchaeote	89.7	0	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	1	0	1	0	0	0	1	1
+GCA_013390375.1	ncbi	Marine Group I thaumarchaeote	89.1	1	Thaumarchaeota	1	0	0	1	1	0	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_013390495.1	ncbi	Marine Group I thaumarchaeote	48	2.1	Thaumarchaeota	1	0	0	0	0	1	1	0	0	0	1	0	1	0	0	0	1	1
+GCA_013390385.1	ncbi	Marine Group I thaumarchaeote	80.4	2.6	Thaumarchaeota	1	0	0	1	1	0	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_013390755.1	ncbi	Marine Group I thaumarchaeote	75.8	3.6	Thaumarchaeota	1	0	0	1	1	0	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_013390775.1	ncbi	Marine Group I thaumarchaeote	69.1	5.2	Thaumarchaeota	1	0	0	1	1	0	0	0	1	1	0	0	1	1	0	0	1	0
+GCA_013390365.1	ncbi	Marine Group I thaumarchaeote	62.9	4.1	Thaumarchaeota	1	0	0	1	0	0	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_013390405.1	ncbi	Marine Group I thaumarchaeote	58.2	17.5	Thaumarchaeota	1	0	0	1	1	0	1	0	1	1	0	0	0	0	0	0	1	1
+GCA_011773125.1	ncbi	Nitrososphaeria archaeon	75.2	1	Thaumarchaeota	1	1	0	0	0	0	1	0	0	0	0	0	1	1	0	0	0	0
+GCA_010028385.1	ncbi	Nitrososphaeria archaeon	86.6	1.5	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_010028495.1	ncbi	Nitrososphaeria archaeon	85.5	1.5	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_010030505.1	ncbi	Nitrososphaeria archaeon	87.1	1	Thaumarchaeota	1	1	0	1	0	1	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_010028465.1	ncbi	Nitrososphaeria archaeon	86.1	0.5	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_001627235.1	ncbi	Nitrosopelagicus sp. REDSEA-S31_B2	83.5	0.5	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_001627015.1	ncbi	Nitrosopelagicus sp. REDSEA-S43_B1	74.2	2.6	Thaumarchaeota	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+GCA_001627095.1	ncbi	Nitrosopelagicus sp. REDSEA-S37_B6	80.9	0.5	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_001627075.1	ncbi	Nitrosopelagicus sp. REDSEA-S25_B3	68	3.1	Thaumarchaeota	1	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_001626095.1	ncbi	Nitrosopelagicus sp. REDSEA-S08_B1	45.9	3.1	Thaumarchaeota	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+GCA_001627055.1	ncbi	Nitrosopelagicus sp. REDSEA-S27_B13N2	62.9	1	Thaumarchaeota	1	0	0	1	1	0	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_019654575.1	ncbi	Candidatus Nitrosopelagicus sp.	75.3	0	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_011319465.1	ncbi	Candidatus Nitrosotalea sp. TS	65.4	0.5	Thaumarchaeota	1	0	0	0	0	0	1	0	0	0	0	0	1	0	0	1	1	1
+GCA_902592435.1	ncbi	uncultured marine group I thaumarchaeote	77.3	0.5	Thaumarchaeota	1	1	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_902588995.1	ncbi	uncultured marine group I thaumarchaeote	65.4	0.5	Thaumarchaeota	0	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_011319475.1	ncbi	Candidatus Nitrosotalea sp. FS	71.1	0	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	1	0	1	1	1	1	1	1
+GCA_016844685.1	ncbi	Candidatus Nitrosotenuis sp.	84	3.1	Thaumarchaeota	1	1	0	1	0	0	0	0	0	0	1	1	1	1	1	1	1	1
+GCA_902567315.1	ncbi	uncultured marine group I thaumarchaeote	71.1	0	Thaumarchaeota	0	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_013330645.1	ncbi	Candidatus Nitrosotenuis sp.	68	0.5	Thaumarchaeota	1	0	0	0	0	0	1	0	0	0	0	0	1	1	0	0	1	1
+GCA_902606965.1	ncbi	uncultured marine group I thaumarchaeote	69.6	0	Thaumarchaeota	1	0	0	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_902590655.1	ncbi	uncultured marine group I thaumarchaeote	64.4	0.5	Thaumarchaeota	1	0	0	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_013330565.1	ncbi	Candidatus Nitrosotenuis sp.	70.1	0.5	Thaumarchaeota	1	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	1
+GCA_013329425.1	ncbi	Candidatus Nitrosotenuis sp.	69.6	1	Thaumarchaeota	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	1
+GCA_902591065.1	ncbi	uncultured marine group I thaumarchaeote	70.1	0	Thaumarchaeota	0	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_013331435.1	ncbi	Candidatus Nitrosotenuis sp.	58.2	0.5	Thaumarchaeota	1	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	1	1
+GCA_004322445.1	ncbi	Candidatus Nitrosotenuis sp.	64.9	1.5	Thaumarchaeota	0	1	0	0	0	0	0	0	0	0	1	1	1	1	1	1	1	1
+GCA_902514095.1	ncbi	uncultured marine group I thaumarchaeote	56.7	0	Thaumarchaeota	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_902606945.1	ncbi	uncultured marine group I thaumarchaeote	43.8	0.5	Thaumarchaeota	0	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_902512865.1	ncbi	uncultured marine group I thaumarchaeote	48.9	1.5	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_012964965.1	ncbi	Candidatus Nitrosopelagicus sp.	54.6	1	Thaumarchaeota	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+GCA_902511735.1	ncbi	uncultured marine group I thaumarchaeote	51.5	0	Thaumarchaeota	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0
+GCA_902608175.1	ncbi	uncultured marine group I thaumarchaeote	61.3	0.5	Thaumarchaeota	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+GCA_902578515.1	ncbi	uncultured marine group I thaumarchaeote	52	1	Thaumarchaeota	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_902513905.1	ncbi	uncultured marine group I thaumarchaeote	34	0	Thaumarchaeota	1	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_015663895.1	ncbi	Candidatus Nitrosopelagicus sp.	54.1	4.1	Thaumarchaeota	1	0	0	0	1	1	0	0	1	1	0	0	0	0	0	0	0	0
+GCA_003702485.1	ncbi	Candidatus Nitrosopelagicus sp.	58.2	0.5	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_018652445.1	ncbi	Candidatus Nitrosopelagicus sp.	61.9	3.1	Thaumarchaeota	0	0	0	1	1	1	1	0	0	0	0	0	1	0	0	0	0	0
+GCA_012959225.1	ncbi	Candidatus Nitrosopelagicus sp.	71.6	0.5	Thaumarchaeota	1	0	0	1	1	0	1	0	0	1	0	0	0	0	0	0	0	0
+GCA_012965845.1	ncbi	Candidatus Nitrosopelagicus sp.	49	0	Thaumarchaeota	0	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_012965865.1	ncbi	Candidatus Nitrosopelagicus sp.	46.9	3.6	Thaumarchaeota	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_002494485.1	ncbi	Nitrososphaerales archaeon UBA213	77.3	0.5	Thaumarchaeota	1	0	0	0	0	0	1	1	1	1	0	0	0	0	0	0	0	1
+GCA_014523495.1	ncbi	Nitrososphaerales archaeon TH1920	85.1	2.1	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_014523515.1	ncbi	Nitrososphaerales archaeon TH1177	82	8.8	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	1	1
+GCA_014523525.1	ncbi	Nitrososphaerales archaeon TH703	83.5	3.1	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	1	0	0	0	1	1
+GCA_014523545.1	ncbi	Nitrososphaerales archaeon TH1173	85.5	4.1	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_014523585.1	ncbi	Nitrososphaerales archaeon TH1917	73.7	3.6	Thaumarchaeota	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_014523605.1	ncbi	Nitrososphaerales archaeon TH4187	75.3	3.1	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	0	0	1	0	0	0	1	1
+GCA_014523595.1	ncbi	Nitrososphaerales archaeon TH5888	58.8	2.1	Thaumarchaeota	0	1	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	1
+GCA_014523625.1	ncbi	Nitrososphaerales archaeon TH5896	82.4	1.5	Thaumarchaeota	1	1	0	0	0	0	0	1	0	0	0	0	1	0	0	0	1	1
+GCA_014523665.1	ncbi	Nitrososphaerales archaeon TH526	84.6	2.6	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	1	0	0	0	1	1
+GCA_014523695.1	ncbi	Nitrososphaerales archaeon TH5895	80.9	1.5	Thaumarchaeota	1	1	0	0	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_011331095.1	ncbi	Nitrososphaerales archaeon	91.2	1.5	Thaumarchaeota	1	1	0	1	0	0	1	0	1	1	1	0	1	1	1	1	1	1
+GCA_011373145.1	ncbi	Nitrososphaerales archaeon	84	0.5	Thaumarchaeota	0	0	0	0	0	0	1	0	1	1	1	1	1	1	1	1	1	1
+GCA_012928565.1	ncbi	Candidatus Nitrosopelagicus brevis	89.2	0	Thaumarchaeota	1	1	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_009843815.1	ncbi	Cenarchaeum sp. SB0675_bin_21	90.2	3.6	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_020027325.1	ncbi	Cenarchaeum sp.	84.5	0.5	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	0	0	1	1	0	0
+GCA_905220655.1	ncbi	Candidatus Nitrosotenuis uzonensis	93.3	2.1	Thaumarchaeota	1	1	0	0	0	0	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_009839185.1	ncbi	Cenarchaeum sp. SB0663_bin_5	85	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_009841175.1	ncbi	Cenarchaeum sp. SB0661_bin_35	87.6	3.1	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_009840065.1	ncbi	Cenarchaeum sp. SB0662_bin_33	90.2	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_009837245.1	ncbi	Cenarchaeum sp. SB0666_bin_15	86.6	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_014237995.1	ncbi	Cenarchaeum sp.	56.7	1.5	Thaumarchaeota	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_009842575.1	ncbi	Cenarchaeum sp. SB0677_bin_16	87.1	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_009841735.1	ncbi	Cenarchaeum sp. SB0678_bin_8	85	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_009836545.1	ncbi	Cenarchaeum sp. SB0667_bin_13	84.5	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_014238105.1	ncbi	Cenarchaeum sp.	47.5	5.7	Thaumarchaeota	1	0	0	0	0	0	1	1	0	0	0	0	0	0	1	0	0	0
+GCA_014238635.1	ncbi	Cenarchaeum sp.	44.3	0	Thaumarchaeota	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	1	0	0
+GCA_900299125.1	ncbi	Nitrosopumilales archaeon	91.3	2.1	Thaumarchaeota	0	1	0	1	0	0	1	0	0	0	1	0	1	1	1	1	1	1
+GCA_002496625.1	ncbi	Nitrososphaeraceae archaeon UBA536	71.1	0.5	Thaumarchaeota	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+GCA_002498345.1	ncbi	Nitrososphaeraceae archaeon UBA466	67.5	1.5	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_002499525.1	ncbi	Nitrosopumilales archaeon UBA218	74.7	0.5	Thaumarchaeota	1	1	0	0	0	0	1	0	0	0	0	0	1	1	0	0	1	1
+GCA_002501935.1	ncbi	Nitrososphaeraceae archaeon UBA273	62.9	1	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_002504425.1	ncbi	Nitrososphaeraceae archaeon UBA272	51	1.5	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_013407275.1	ncbi	Candidatus Nitrosotenuis sp. DW1	91.8	2.1	Thaumarchaeota	1	1	0	1	0	1	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_009377575.1	ncbi	Nitrososphaeraceae archaeon	89.7	2.6	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_016782225.1	ncbi	Nitrososphaeraceae archaeon	90.7	1.5	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_016838825.1	ncbi	Nitrosopumilales archaeon	91.8	2.1	Thaumarchaeota	1	0	0	0	0	0	1	0	1	1	1	0	0	0	0	0	1	1
+GCA_016276965.1	ncbi	Nitrosopumilales archaeon	80.4	4.1	Thaumarchaeota	1	0	0	1	0	0	1	1	1	1	1	1	1	1	1	1	1	1
+GCA_016782145.1	ncbi	Nitrososphaeraceae archaeon	87.6	0.5	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_020029175.1	ncbi	Nitrososphaeraceae archaeon	87.1	1.5	Thaumarchaeota	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+GCA_007280335.1	ncbi	Nitrosopumilales archaeon	85.6	0.5	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	0	0	1	1	0	0	1	1
+GCA_007280465.1	ncbi	Nitrosopumilales archaeon	59.8	0.5	Thaumarchaeota	1	0	0	0	0	0	0	0	0	0	1	0	1	1	0	0	1	1
+GCA_020029115.1	ncbi	Nitrososphaeraceae archaeon	86.6	1.5	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	1	0	0	0	1	1
+GCA_019246625.1	ncbi	Nitrososphaeraceae archaeon	91.2	1.5	Thaumarchaeota	1	1	0	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_016838845.1	ncbi	Nitrosopumilales archaeon	89.6	1.5	Thaumarchaeota	1	0	0	1	1	0	1	1	1	1	1	0	1	1	1	1	1	1
+GCA_016838865.1	ncbi	Nitrosopumilales archaeon	62.9	2.1	Thaumarchaeota	1	0	0	0	0	0	1	0	1	1	1	1	1	1	1	1	1	1
+GCA_013114725.1	ncbi	Nitrososphaeraceae archaeon	84	0.5	Thaumarchaeota	0	1	0	0	0	0	1	0	0	0	0	0	1	0	0	0	1	1
+GCA_020029155.1	ncbi	Nitrososphaeraceae archaeon	81.4	1	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_002317825.1	ncbi	Nitrosopumilales archaeon	51	13.9	Thaumarchaeota	1	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_016782245.1	ncbi	Nitrososphaeraceae archaeon	88.2	2.1	Thaumarchaeota	0	1	0	1	0	0	0	1	0	0	0	0	1	0	0	0	0	1
+GCA_020029195.1	ncbi	Nitrososphaeraceae archaeon	84	0.5	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	1	0	0	0	0	1
+GCA_009665115.1	ncbi	Nitrosopumilales archaeon	85	1	Thaumarchaeota	0	0	0	1	0	0	0	0	0	0	0	0	1	1	0	0	1	1
+GCA_020029245.1	ncbi	Nitrososphaeraceae archaeon	83	0.5	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	1	0	0	0	0	1
+GCA_020028255.1	ncbi	Nitrososphaeraceae archaeon	85.5	1.5	Thaumarchaeota	0	0	0	1	0	0	1	0	0	0	0	0	1	0	0	0	1	1
+GCA_016176745.1	ncbi	Nitrosopumilales archaeon	73.2	0.5	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	1	1	0	0	1	1
+GCA_016782315.1	ncbi	Nitrososphaeraceae archaeon	84.6	2.1	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_020029015.1	ncbi	Nitrososphaeraceae archaeon	77.8	1.5	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	1	0	0	0	1	1
+GCA_016838795.1	ncbi	Nitrosopumilales archaeon	79.4	0.5	Thaumarchaeota	1	0	0	0	1	0	1	1	1	1	0	0	1	1	0	0	1	1
+GCA_020028975.1	ncbi	Nitrososphaeraceae archaeon	75.8	0.5	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	1	0	0	0	1	1
+GCA_009665125.1	ncbi	Nitrosopumilales archaeon	72.6	1	Thaumarchaeota	0	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_020029045.1	ncbi	Nitrososphaeraceae archaeon	75.2	1.5	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	1	0	0	0	1	1
+GCA_016838745.1	ncbi	Nitrosopumilales archaeon	58.2	1	Thaumarchaeota	1	0	0	0	0	0	0	1	1	1	0	0	1	0	0	1	1	1
+GCA_020029075.1	ncbi	Nitrososphaeraceae archaeon	68.5	1	Thaumarchaeota	1	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	1
+GCA_020028315.1	ncbi	Nitrososphaeraceae archaeon	78.3	1	Thaumarchaeota	1	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	1
+GCA_016838725.1	ncbi	Nitrosopumilales archaeon	53.1	0.5	Thaumarchaeota	1	0	0	0	0	0	1	0	0	0	0	0	1	0	1	1	0	1
+GCA_020029035.1	ncbi	Nitrososphaeraceae archaeon	73.7	0.5	Thaumarchaeota	1	0	0	1	0	0	1	0	0	0	0	0	1	0	0	0	0	1
+GCA_016838785.1	ncbi	Nitrosopumilales archaeon	60.3	0.5	Thaumarchaeota	1	0	0	0	0	0	0	1	1	1	0	0	1	1	1	1	1	1
+GCA_016782265.1	ncbi	Nitrososphaeraceae archaeon	77.3	2.6	Thaumarchaeota	0	1	0	1	0	0	1	0	0	0	0	0	1	0	0	0	0	1
+GCA_016782305.1	ncbi	Nitrososphaeraceae archaeon	75.2	1	Thaumarchaeota	0	1	0	1	0	0	0	1	0	0	0	0	1	0	0	0	0	1
+GCA_019241055.1	ncbi	Nitrososphaeraceae archaeon	64.9	1	Thaumarchaeota	1	1	0	1	0	0	0	0	0	0	0	0	1	0	0	0	1	1
+GCA_016782195.1	ncbi	Nitrososphaeraceae archaeon	82.4	7.7	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_011058825.1	ncbi	Candidatus Nitrosocaldus sp.	90.7	0.5	Thaumarchaeota	1	0	1	1	0	0	1	0	1	1	1	1	1	0	1	1	1	1
+GCA_013538715.1	ncbi	Candidatus Nitrosocaldus sp.	89.2	0.5	Thaumarchaeota	1	0	1	0	0	0	1	1	1	1	1	1	1	1	1	1	1	1
+GCA_013538795.1	ncbi	Candidatus Nitrosocaldus sp.	92.3	0.5	Thaumarchaeota	1	0	1	0	0	0	1	1	1	1	1	1	1	1	1	1	1	1
+GCA_013538805.1	ncbi	Candidatus Nitrosocaldus sp.	91.7	0.5	Thaumarchaeota	1	0	1	0	0	0	1	0	1	1	1	1	1	1	1	1	1	1
+GCA_013538705.1	ncbi	Candidatus Nitrosocaldus sp.	90.7	0.5	Thaumarchaeota	1	0	1	0	0	0	1	0	1	1	1	1	1	1	1	1	1	1
+GCA_013538675.1	ncbi	Candidatus Nitrosocaldus sp.	86.6	0	Thaumarchaeota	1	0	1	0	0	0	1	0	1	1	1	1	1	0	1	1	0	1
+GCA_013538695.1	ncbi	Candidatus Nitrosocaldus sp.	90.7	1	Thaumarchaeota	1	0	1	0	0	0	1	0	1	1	1	1	1	1	1	1	1	1
+GCA_013538775.1	ncbi	Candidatus Nitrosocaldus sp.	56.7	2.6	Thaumarchaeota	1	0	1	0	0	0	1	0	1	1	0	0	0	0	0	0	0	0
+GCA_013538755.1	ncbi	Candidatus Nitrosocaldus sp.	61.3	0	Thaumarchaeota	1	0	1	1	0	0	1	0	1	1	0	1	1	0	0	1	0	1
+GCA_000200715.1	ncbi	Cenarchaeum symbiosum A	89.7	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	0	0	1	1	0	0
+GCA_002787055.1	ncbi	Candidatus Nitrosotenuis aquarius	92.2	1	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_005798995.1	ncbi	Nitrosopumilaceae archaeon	56.7	0	Thaumarchaeota	1	0	0	0	1	0	0	0	0	0	0	0	1	1	0	0	0	1
+GCA_900620265.1	ncbi	Nitrosopumilaceae archaeon	90.7	1	Thaumarchaeota	1	0	0	1	1	1	1	1	0	0	1	0	0	0	1	1	0	0
+GCA_014193235.1	ncbi	Nitrosopumilaceae archaeon	90.2	0.5	Thaumarchaeota	1	1	0	1	1	0	0	1	0	0	0	0	1	1	0	0	0	1
+GCA_005798405.1	ncbi	Nitrosopumilaceae archaeon	87.1	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_005778305.1	ncbi	Nitrosopumilaceae archaeon	92.2	1	Thaumarchaeota	1	0	0	1	1	1	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_011774755.1	ncbi	Nitrosopumilaceae archaeon	61.4	2.1	Thaumarchaeota	1	0	0	0	0	0	1	1	0	0	1	0	1	1	1	1	0	1
+GCA_011771385.1	ncbi	Nitrosopumilaceae archaeon	86.1	2.1	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	1	1	0	0
+GCA_011773785.1	ncbi	Nitrosopumilaceae archaeon	86.1	2.1	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	1	1	0	0
+GCA_005787845.1	ncbi	Nitrosopumilaceae archaeon	80.9	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_010028325.1	ncbi	Nitrosopumilaceae archaeon	86.1	1	Thaumarchaeota	1	1	0	1	0	1	1	0	0	0	0	1	1	1	1	1	1	1
+GCA_013867345.1	ncbi	Nitrosopumilaceae archaeon	82.5	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+GCA_011772925.1	ncbi	Nitrosopumilaceae archaeon	87.2	2.1	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	1	1	0	1
+GCA_010030375.1	ncbi	Nitrosopumilaceae archaeon	86.6	1	Thaumarchaeota	1	1	0	1	0	0	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_005790655.1	ncbi	Nitrosopumilaceae archaeon	90.2	2.1	Thaumarchaeota	1	0	0	1	1	1	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_010028485.1	ncbi	Nitrosopumilaceae archaeon	83.5	1	Thaumarchaeota	1	1	0	1	0	1	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_011523285.1	ncbi	Nitrosopumilaceae archaeon	88.1	0.5	Thaumarchaeota	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_005787795.1	ncbi	Nitrosopumilaceae archaeon	39.7	0.5	Thaumarchaeota	0	0	0	0	0	0	0	1	0	0	0	0	1	1	0	0	0	0
+GCA_010030475.1	ncbi	Nitrosopumilaceae archaeon	84.5	1.5	Thaumarchaeota	1	1	0	1	0	1	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_013330055.1	ncbi	Nitrosopumilaceae archaeon	70.6	0.5	Thaumarchaeota	1	0	0	1	0	0	0	0	1	1	1	0	1	1	1	1	1	1
+GCA_013867285.1	ncbi	Nitrosopumilaceae archaeon	84	2.6	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+GCA_012271085.1	ncbi	Nitrosopumilaceae archaeon	89.2	0.5	Thaumarchaeota	1	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0
+GCA_010030425.1	ncbi	Nitrosopumilaceae archaeon	84.5	1.5	Thaumarchaeota	1	1	0	1	0	1	1	0	0	0	1	1	1	1	1	1	1	1
+GCA_005798385.1	ncbi	Nitrosopumilaceae archaeon	86.6	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_011776245.1	ncbi	Nitrosopumilaceae archaeon	61.3	1.5	Thaumarchaeota	1	0	0	0	0	0	1	1	0	0	1	0	1	1	1	1	1	1
+GCA_013867335.1	ncbi	Nitrosopumilaceae archaeon	86.1	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+GCA_005799035.1	ncbi	Nitrosopumilaceae archaeon	79.4	3.1	Thaumarchaeota	1	1	0	1	1	0	0	1	0	0	0	0	0	0	0	0	0	1
+GCA_005776525.1	ncbi	Nitrosopumilaceae archaeon	79.4	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_005790695.1	ncbi	Nitrosopumilaceae archaeon	77.8	0	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_013867185.1	ncbi	Nitrosopumilaceae archaeon	70.1	6.2	Thaumarchaeota	1	0	0	0	1	0	1	0	0	0	0	0	1	0	0	0	0	0
+GCA_020027255.1	ncbi	Nitrosopumilaceae archaeon	79.4	0	Thaumarchaeota	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_013867305.1	ncbi	Nitrosopumilaceae archaeon	77.3	1	Thaumarchaeota	1	1	0	0	1	0	1	0	0	0	0	0	1	1	0	0	0	1
+GCA_011774125.1	ncbi	Nitrosopumilaceae archaeon	61.4	2.6	Thaumarchaeota	1	0	0	0	0	0	1	1	0	0	1	0	1	1	1	1	1	1
+GCA_011775845.1	ncbi	Nitrosopumilaceae archaeon	61.4	2.1	Thaumarchaeota	1	0	0	0	1	0	1	1	0	0	1	0	1	1	1	1	1	1
+GCA_011777025.1	ncbi	Nitrosopumilaceae archaeon	61.4	2.6	Thaumarchaeota	1	0	0	0	0	0	1	1	0	0	1	0	1	1	1	1	1	1
+GCA_003229255.1	ncbi	Nitrosopumilaceae archaeon	58.8	6.7	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	1	0	1	1	1	0	1	1
+GCA_007571225.1	ncbi	Nitrosopumilaceae archaeon	70.1	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_013867275.1	ncbi	Nitrosopumilaceae archaeon	61.8	7.2	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_013867205.1	ncbi	Nitrosopumilaceae archaeon	60.3	5.7	Thaumarchaeota	0	1	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_012271275.1	ncbi	Nitrosopumilaceae archaeon	81.9	0.5	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	0	0	1	1	0	1	0	0
+GCA_016845255.1	ncbi	Nitrosopumilaceae archaeon	50	4.6	Thaumarchaeota	1	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_013867235.1	ncbi	Nitrosopumilaceae archaeon	64.9	3.6	Thaumarchaeota	0	1	0	0	1	0	1	1	0	0	0	0	1	1	1	1	0	1
+GCA_008389435.1	ncbi	Candidatus Nitrosocosmicus sp. SS	89.1	1.5	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_009898475.1	ncbi	Nitrososphaera sp. AFS	83.5	1	Thaumarchaeota	1	1	0	1	0	0	0	0	0	0	0	0	1	1	0	0	1	1
+GCA_013388945.1	ncbi	Nitrososphaera sp.	92.8	0.5	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_009861625.1	ncbi	Candidatus Nitrosocosmicus sp. SS	89.1	1.5	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_902826075.1	ncbi	uncultured Candidatus Nitrosocosmicus sp.	81.9	1	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_001917865.1	ncbi	Candidatus Nitrososphaera sp. 13_1_40CM_48_12	48	2.1	Thaumarchaeota	0	0	0	0	0	0	0	1	0	0	0	0	1	1	1	0	0	0
+GCA_009379865.1	ncbi	Candidatus Nitrosocosmicus sp.	81.9	1	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_013114705.1	ncbi	Candidatus Nitrosocosmicus sp.	78.9	0.5	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_002495575.1	ncbi	Nitrososphaera sp. UBA216	68.5	1	Thaumarchaeota	1	0	0	0	0	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_013114715.1	ncbi	Nitrososphaera sp.	86.6	3.6	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	1	1
+GCA_002495135.1	ncbi	Nitrososphaera sp. UBA239	60.3	1	Thaumarchaeota	0	0	0	1	0	0	0	1	0	0	0	0	1	0	0	0	0	1
+GCA_014533965.1	ncbi	Nitrososphaera sp.	41.2	3.6	Thaumarchaeota	0	1	0	1	0	0	0	0	0	0	0	0	1	1	0	0	0	1
+GCA_900248165.1	ncbi	Candidatus Nitrosocaldus cavascurensis	90.7	0.5	Thaumarchaeota	1	0	1	1	0	0	1	0	1	1	1	1	1	0	1	1	1	1
+GCA_003702465.1	ncbi	Candidatus Nitrosomarinus sp.	83	0	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	0	0	0	0	0
+GCA_007826885.1	ncbi	Candidatus Nitrosocosmicus arcticus	90.7	1	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_014078535.1	ncbi	Nitrosopumilus sp. b2	92.3	0.5	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	1	0	1	1	1	1	1	1
+GCA_014078525.1	ncbi	Nitrosopumilus sp. b3	93.3	0.5	Thaumarchaeota	1	1	0	0	1	1	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_014078545.1	ncbi	Nitrosopumilus sp. b1	91.7	4.1	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_012928605.1	ncbi	Candidatus Nitrosopumilus sp. MTA1	92.8	2.6	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	1	0	1	0	0	0	1	1
+GCA_013215285.1	ncbi	Nitrosopumilus sp.	91.2	0.5	Thaumarchaeota	1	0	0	0	1	0	1	1	0	0	0	0	1	1	1	1	1	1
+GCA_003331425.1	ncbi	Nitrosopumilus sp.	90.7	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_008080855.1	ncbi	Nitrosopumilus sp.	89.2	2.1	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_001543015.1	ncbi	Nitrosopumilus sp. LS_AOA	93.8	0.5	Thaumarchaeota	1	0	0	0	1	0	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_905612295.1	ncbi	uncultured Candidatus Nitrosopumilus sp.	57.2	0	Thaumarchaeota	0	1	0	0	1	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_905479565.1	ncbi	uncultured Candidatus Nitrosopumilus sp.	88.7	3.6	Thaumarchaeota	1	0	0	0	1	0	1	1	0	0	0	0	1	0	0	0	1	1
+GCA_008080815.1	ncbi	Nitrosopumilus sp.	81.9	0.5	Thaumarchaeota	0	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_003702525.1	ncbi	Nitrosopumilus sp.	84.5	1.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_018263505.1	ncbi	Nitrosopumilus sp.	89.7	1	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	1	1	1	1	0	0	1
+GCA_905620515.1	ncbi	uncultured Candidatus Nitrosopumilus sp.	61.3	0	Thaumarchaeota	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+GCA_905616385.1	ncbi	uncultured Candidatus Nitrosopumilus sp.	59.8	0	Thaumarchaeota	1	0	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_905612425.1	ncbi	uncultured Candidatus Nitrosopumilus sp.	73.7	0.5	Thaumarchaeota	1	1	0	0	1	1	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_016125975.1	ncbi	Nitrosopumilus sp.	91.2	0	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	1	0	1	1	1	1	1	1
+GCA_002494985.1	ncbi	Nitrosopumilus sp. UBA527	63.9	0	Thaumarchaeota	1	0	0	0	1	0	1	0	0	0	0	0	1	1	0	1	0	1
+GCA_905612275.1	ncbi	uncultured Candidatus Nitrosopumilus sp.	51.5	0	Thaumarchaeota	1	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0
+GCA_013911135.1	ncbi	Nitrosopumilus sp.	91.2	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	1	0	1	1	0	0	0	1
+GCA_003724255.1	ncbi	Nitrosopumilus sp. B06	85	1	Thaumarchaeota	1	0	0	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_003702495.1	ncbi	Nitrosopumilus sp.	87.1	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_009694705.1	ncbi	Nitrosopumilus sp.	85.1	0	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_905612455.1	ncbi	uncultured Candidatus Nitrosopumilus sp.	63.9	0	Thaumarchaeota	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+GCA_003724325.1	ncbi	Nitrosopumilus sp. D6	79.4	0.5	Thaumarchaeota	1	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	0
+GCA_003724285.1	ncbi	Nitrosopumilus sp. H13	80.4	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	0	0	0	1	0	0
+GCA_905620485.1	ncbi	uncultured Candidatus Nitrosopumilus sp.	44.8	0	Thaumarchaeota	0	0	0	1	1	0	0	1	0	0	0	0	0	0	0	0	0	0
+GCA_002506665.1	ncbi	Nitrosopumilus sp. UBA526	78.9	0.5	Thaumarchaeota	1	0	0	0	1	0	1	1	0	0	0	0	1	1	0	1	0	1
+GCA_017855915.1	ncbi	Nitrosopumilus sp.	87.6	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_001437625.1	ncbi	Nitrosopumilus sp. BACL13 MAG-121220-bin23	89.2	0	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_013694585.1	ncbi	Nitrosopumilus sp.	86.1	2.1	Thaumarchaeota	0	0	0	1	0	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_013043885.1	ncbi	Nitrosopumilus sp.	56.7	5.7	Thaumarchaeota	0	0	0	0	1	0	1	0	0	0	0	0	1	1	0	1	0	0
+GCA_007571135.1	ncbi	Nitrosopumilus sp.	81.4	0	Thaumarchaeota	1	0	0	1	0	0	1	1	0	0	1	0	0	0	0	0	0	0
+GCA_013043295.1	ncbi	Nitrosopumilus sp.	80.4	0	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	0	1	0	1
+GCA_018680225.1	ncbi	Nitrosopumilus sp.	80.4	0	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	1	1	0	1	0	1
+GCA_002508395.1	ncbi	Nitrosopumilus sp. UBA241	89.2	0	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_013821245.1	ncbi	Nitrosopumilus sp.	88.7	2.1	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_014066365.1	ncbi	Nitrosopumilus sp. YT1	79.9	9.8	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	1	0	1	0	0	0	1	1
+GCA_018657465.1	ncbi	Nitrosopumilus sp.	68	0.5	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_018646285.1	ncbi	Nitrosopumilus sp.	65	2.6	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_018676395.1	ncbi	Nitrosopumilus sp.	69.1	2.6	Thaumarchaeota	1	1	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+GCA_018668215.1	ncbi	Nitrosopumilus sp.	60.8	2.6	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_018695895.1	ncbi	Nitrosopumilus sp.	65.5	2.1	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_018657375.1	ncbi	Nitrosopumilus sp.	71.1	1	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_018652765.1	ncbi	Nitrosopumilus sp.	65.9	1	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_018674605.1	ncbi	Nitrosopumilus sp.	65.4	0.5	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_018696375.1	ncbi	Nitrosopumilus sp.	60.3	1.5	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_018669025.1	ncbi	Nitrosopumilus sp.	69.1	3.1	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_007571005.1	ncbi	Nitrosopumilus sp.	62.9	0	Thaumarchaeota	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0
+GCA_018697895.1	ncbi	Nitrosopumilus sp.	70.7	2.1	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_018661905.1	ncbi	Nitrosopumilus sp.	61.8	4.6	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_013329465.1	ncbi	Nitrosopumilus sp.	77.3	0	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_013329365.1	ncbi	Nitrosopumilus sp.	70.1	0	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_018649845.1	ncbi	Nitrosopumilus sp.	65.4	1.5	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	0
+GCA_018651205.1	ncbi	Nitrosopumilus sp.	66	0	Thaumarchaeota	1	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_018655135.1	ncbi	Nitrosopumilus sp.	58.7	1	Thaumarchaeota	1	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0
+GCA_018646185.1	ncbi	Nitrosopumilus sp.	61.3	0	Thaumarchaeota	0	1	0	0	1	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_013139085.1	ncbi	Nitrosopumilus sp.	54.1	4.1	Thaumarchaeota	1	1	0	1	1	0	1	0	0	0	0	0	1	1	1	1	0	0
+GCA_018669595.1	ncbi	Nitrosopumilus sp.	67	7.2	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_003702585.1	ncbi	Nitrosopumilus sp.	34.6	2.1	Thaumarchaeota	0	1	0	0	1	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_012961065.1	ncbi	Nitrosopumilus sp.	45.4	2.6	Thaumarchaeota	1	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0
+GCA_013811745.1	ncbi	Nitrosopumilus sp.	45.8	1	Thaumarchaeota	0	1	0	0	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_001674955.1	ncbi	Candidatus Nitrosopumilus sp. DDS1	58.8	0	Thaumarchaeota	1	1	0	0	1	1	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_001438895.1	ncbi	Nitrosopumilus sp. BACL13 MAG-120910-bin56	58.2	0.5	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	0
+GCA_014240125.1	ncbi	Nitrosopumilus sp.	38.1	1.5	Thaumarchaeota	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+GCA_003569705.1	ncbi	Nitrosarchaeum sp.	88.6	1	Thaumarchaeota	1	1	0	1	1	0	0	1	0	0	0	0	1	1	0	0	0	1
+GCA_002737445.1	ncbi	Nitrosarchaeum sp.	91.2	0.5	Thaumarchaeota	1	0	0	1	1	0	0	1	0	0	0	0	0	0	0	0	0	1
+GCA_013521055.1	ncbi	Nitrosarchaeum sp.	91.7	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_016106165.1	ncbi	Nitrosarchaeum sp.	90.7	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_018334095.1	ncbi	Nitrosarchaeum sp.	86.1	3.1	Thaumarchaeota	1	1	0	1	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+GCA_016106185.1	ncbi	Nitrosarchaeum sp.	90.2	0.5	Thaumarchaeota	1	0	0	1	1	0	1	1	0	0	0	0	0	0	0	0	0	1
+GCA_014075315.1	ncbi	Nitrosopumilus sp.	91.7	0.5	Thaumarchaeota	1	0	0	0	1	0	1	1	0	0	0	0	1	0	0	0	0	1
+GCA_009697445.1	ncbi	Nitrosarchaeum sp.	70.6	0.5	Thaumarchaeota	1	0	0	1	1	0	0	1	0	0	0	0	0	0	0	0	0	1
+GCA_016844465.1	ncbi	Nitrosarchaeum sp.	64	2.1	Thaumarchaeota	1	0	0	1	1	0	0	1	0	0	1	0	1	1	1	1	0	1
+GCA_009697485.1	ncbi	Nitrosarchaeum sp.	57.2	0	Thaumarchaeota	1	0	0	0	1	0	0	1	0	0	0	0	1	0	0	0	0	1
+GCA_016234975.1	ncbi	Nitrosarchaeum sp.	73.2	0	Thaumarchaeota	1	1	0	0	1	1	0	1	0	0	1	0	1	1	1	1	1	1
+GCA_016186075.1	ncbi	Nitrosarchaeum sp.	70.6	0.5	Thaumarchaeota	1	0	0	0	1	0	0	1	0	0	0	0	1	1	0	0	0	1
+GCA_016181505.1	ncbi	Nitrosarchaeum sp.	62.9	0.5	Thaumarchaeota	1	1	0	0	1	0	0	1	0	0	0	0	1	0	1	1	0	1
+GCA_018128925.1	ncbi	Nitrosopumilus sp. K4	91.2	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	1	1
+GCA_900696045.1	ncbi	Candidatus Nitrosocosmicus franklandus	90.7	1	Thaumarchaeota	0	1	0	1	0	0	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_003175215.1	ncbi	Nitrosopumilus zosterae	93.3	0.5	Thaumarchaeota	1	1	0	0	1	1	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_006740685.1	ncbi	Candidatus Nitrosopumilus sp. SW	92.8	0.5	Thaumarchaeota	1	1	0	0	1	1	1	1	0	0	1	0	1	1	1	1	0	1
+GCA_013407385.1	ncbi	Nitrosarchaeum sp. AC2	88.7	0	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+GCA_013407145.1	ncbi	Nitrosopumilus cobalaminigenes	91.7	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+GCA_013407165.1	ncbi	Nitrosopumilus oxyclinae	93.3	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+GCA_013407185.1	ncbi	Nitrosopumilus ureiphilus	91.7	1	Thaumarchaeota	1	1	0	1	1	1	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_000220175.2	ncbi	Nitrosarchaeum koreense MY1	92.3	0.5	Thaumarchaeota	1	1	0	0	1	0	1	1	0	0	1	0	1	1	1	1	0	1
+GCA_000018465.1	ncbi	Nitrosopumilus maritimus SCM1	92.3	0.5	Thaumarchaeota	1	1	0	0	1	1	1	1	0	0	0	0	1	1	0	0	0	1
+GCA_000204585.1	ncbi	Candidatus Nitrosarchaeum limnium SFB1	88.6	0.5	Thaumarchaeota	1	1	0	0	1	1	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_003352285.1	ncbi	Crenarchaeota archaeon	91.7	0.5	Crenarchaeota	1	1	0	0	1	0	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_003352295.1	ncbi	Crenarchaeota archaeon	92.3	0.5	Crenarchaeota	1	1	0	0	1	0	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_003352245.1	ncbi	Crenarchaeota archaeon	91.7	0.5	Crenarchaeota	1	1	0	0	1	0	1	1	0	0	1	1	1	1	1	1	1	1
+GCA_003352265.1	ncbi	Crenarchaeota archaeon	91.7	0.5	Crenarchaeota	1	1	0	0	1	0	1	1	0	0	1	1	1	1	1	1	1	1
