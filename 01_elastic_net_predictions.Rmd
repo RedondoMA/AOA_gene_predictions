@@ -25,6 +25,7 @@ library(ggfortify)
 library(phyloseq)
 library(picante)
 library(caper)
+library(ape)
 #Import functions for the script
 #Predictions using elastic net regression
 source("./functions/pred_phyl_glmnet.R")
