@@ -385,7 +385,7 @@ We export the genomes data and the predictions to display them on the phylogenet
 #Objects are created. Export them with the write.table function
 #1. Genomes
 #Grouping the genes by function
-Nitrogen<-c("Amt.1", "Amt.2", "Amt.3", "ureC")
+Nitrogen<-c("Amt.1", "Amt.2", "Amt.NC", "ureC")
 CAA<-c("metE", "metE_2", "proDH", "RocA")
 motility<-c("cheA", "cheY", "cheY_2","TadC", "flaK","flal")
 adaptation<-c("ipct", "nhap", "trk", "cspc")

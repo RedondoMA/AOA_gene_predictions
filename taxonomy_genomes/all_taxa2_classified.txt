@@ -1,4 +1,4 @@
-name	predictions	lineage	clade	subsubclade	extra_info	Amt.1	Amt.2	Amt.3	ureC	cspc	ipct	nhap	trk	metE	metE_2	flaK	cheA	cheY	cheY_2	TadC	flal	proDH	RocA
+name	predictions	lineage	clade	subsubclade	extra_info	Amt.2	Amt.1	Amt.NC	ureC	cspc	ipct	nhap	trk	metE	metE_2	flaK	cheA	cheY	cheY_2	TadC	flal	proDH	RocA
 NitBrien	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 NtrTenui	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 NitMult2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA

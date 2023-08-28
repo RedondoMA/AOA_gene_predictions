@@ -1,4 +1,4 @@
-Accession	source	Genome Name / Sample Name	completeness	contamination	Phylum	Amt-1	Amt-2	Amt-3	ureC	cspc	ipct	nhap	trk	metE	metE_2	flaK	cheA	cheY	cheY_2	TadC	flal	proDH	RocA
+Accession	source	Genome Name / Sample Name	completeness	contamination	Phylum	Amt-2	Amt-1	Amt-NC	ureC	cspc	ipct	nhap	trk	metE	metE_2	flaK	cheA	cheY	cheY_2	TadC	flal	proDH	RocA
 2716884905	img	Thaumarchaeota archaeon SCGC AC-337_L13v2 (contamination screened)	22.2	0	Thaumarchaeota	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
 2510065023	img	Candidatus Nitrososphaera gargensis Ga9-2	94.9	2.6	Thaumarchaeota	1	1	0	1	0	0	1	1	0	0	1	1	1	1	1	1	1	1
 2786546742	img	Nitrosopumilales archaeon CG_4_10_14_0_8_um_filter_34_8	80.9	0.5	Thaumarchaeota	1	1	0	1	1	0	0	1	0	0	1	0	1	1	0	1	1	1
