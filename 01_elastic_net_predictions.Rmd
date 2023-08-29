@@ -84,8 +84,8 @@ all_taxa2_classified<-all_taxa2_classified[!(all_taxa2_classified$name%in%(outgr
 genomes_classified<-all_taxa2_classified[all_taxa2_classified$predictions=="no",]#These are the 168 genomes
 alves_seqs_classified<-all_taxa2_classified[all_taxa2_classified$predictions=="yes",c(1:6)]#These are all the rest of sequences of the ref. phylogeny, deleting the NAs
 #A summary of the genomes by lineage and clade
-lineages<-as.data.frame(genomes_classified%>%group_by(lineage)%>%summarise(total_genomes=n()))
-clades<-as.data.frame(genomes_classified%>%group_by(lineage,clade)%>%summarise(total_genomes=n()))
+lineages<-as.data.frame(genomes_classified%>%group_by(lineage)%>%dplyr::summarise(total_genomes=n()))
+clades<-as.data.frame(genomes_classified%>%group_by(lineage,clade)%>%dplyr::summarise(total_genomes=n()))
 print(lineages)
 print(clades)
 ```
@@ -194,11 +194,12 @@ comp_lin<-pred_info_genomes
 comp_lin$name<-rownames(comp_lin)
 result_taxonomy<-join(comp_lin, genomes_classified, by="name")
 #Summarize by lineages
-results_by_lineages<-result_taxonomy%>%group_by(lineage,clade)%>%summarise(mean_accuracy=mean(accuracy_genomes), mean_sensitivity=mean(sensitivity_genomes), mean_specificity=mean(specificity_genomes),total_genomes=n())
+results_by_lineages<-result_taxonomy%>%group_by(lineage,clade)%>%dplyr::summarise(mean_accuracy=mean(accuracy_genomes), mean_sensitivity=mean(sensitivity_genomes), mean_specificity=mean(specificity_genomes),total_genomes=n())
 results_by_lineages
 ```
 
 ## 2.Ancestral state reconstruction
+When Using R studio >4.3, as of 29-August-2023, there is a bug with the sort() command that gives an error on the phyEstimateDisc function. 
 
 ```{r warning=FALSE}
 #Import from ARB a tree with extended and justified edges length. Edge length=0 gives error in the function. IMPORTANT: this is not an ultrametric tree
