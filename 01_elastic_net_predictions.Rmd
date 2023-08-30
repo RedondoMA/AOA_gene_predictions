@@ -202,7 +202,7 @@ results_by_lineages
 
 ## 2.Ancestral state reconstruction
 
-When Using R studio >4.3, as of 29-August-2023, there is a bug with the sort() command that gives an error on the phyEstimateDisc function. To avoid that error, run the muted line 219 instead of line 217
+When Using R studio >4.3, as of 29-August-2023, there is a bug with the sort() command of the phyEstimateDisc function that gives an error and stops the analysis. To avoid that error, I modified the lines of the original phyEstimateDisc function. The modified function is sourced at the begginning of the script
 
 ```{r warning=FALSE}
 #Import from ARB a tree with extended and justified edges length. Edge length=0 gives error in the function. IMPORTANT: this is not an ultrametric tree
@@ -214,9 +214,9 @@ AOA_pred_picante<-matrix(ncol=ncol(traits_AOA3), nrow=sum(is.na(traits_AOA6[,1])
 colnames(AOA_pred_picante)<-colnames(traits_AOA3)#Name the columns according to the genes
 
 for (i in 1:ncol(traits_AOA3)){
-pic_pred<-phyEstimateDisc(tree_AOA_asr2,traits_AOA3[,i,drop=FALSE])#ASR for the taxa on the phylogeny for each gene
-#If working with R >4.2 and the loop stops run the muted line below intead of the one above
-#pic_pred<-phyEstimateDisc_mine(tree_AOA_asr2,traits_AOA3[,i,drop=FALSE])
+#pic_pred<-phyEstimateDisc(tree_AOA_asr2,traits_AOA3[,i,drop=FALSE])#ASR for the taxa on the phylogeny for each gene
+#If working with R >4.2 and the loop stops, run the line below instead of the one above
+pic_pred<-phyEstimateDisc_mine(tree_AOA_asr2,traits_AOA3[,i,drop=FALSE])
 AOA_pred_picante[,i]<-pic_pred$estimated.state# Compile the estimated state
 }
 #Summarize final predictions table
