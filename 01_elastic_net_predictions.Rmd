@@ -29,6 +29,7 @@ library(ape)
 #Import functions for the script
 #Predictions using elastic net regression
 source("./functions/pred_phyl_glmnet.R")
+source("./functions/pred_phyl_glmnet_evo.R")#Fitting "a" parameter in PEMs for each trait
 #Predictions using boosting
 source("./functions/pred_phyl_boost.R")
 #Variation of the function phyEstimateDisc from picante
@@ -262,7 +263,7 @@ We hold out 20% of the entire dataset(test dataset), and we train the model and 
 
 ```{r warning=FALSE}
 #Start by setting the conditions for the validation
-n_runs=1#I leave 1 for the script to run fast. Change to desired number of runs
+n_runs=20#I leave 1 for the script to run fast. Change to desired number of runs
 mynames<-list(colnames(traits_AOA3))
 same_tree=FALSE#Select if ASR and PEM run on the same tree
 #Create the matrices for the PEM predictions
