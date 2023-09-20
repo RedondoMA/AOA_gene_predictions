@@ -29,7 +29,6 @@ library(ape)
 #Import functions for the script
 #Predictions using elastic net regression
 source("./functions/pred_phyl_glmnet.R")
-source("./functions/pred_phyl_glmnet_evo.R")#Fitting "a" parameter in PEMs for each trait
 #Predictions using boosting
 source("./functions/pred_phyl_boost.R")
 #Variation of the function phyEstimateDisc from picante
