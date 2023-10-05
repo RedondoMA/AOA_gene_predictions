@@ -333,7 +333,7 @@ picante_spec<-c()
 for (i in 1:ncol(traits_AOA4_picante)){
 test_trait<-traits_AOA4_picante[,i]
 names(test_trait)<-rownames(traits_AOA4_picante)
-picante_predictions<-phyEstimateDisc(tree_AOA2_picante,test_trait)
+picante_predictions<-phyEstimateDisc_mine(tree_AOA2_picante,test_trait)
 #Calculate accuracy
 if(identical(rownames(picante_predictions), rownames(observed_val))==TRUE){
 picante_acc[i]<-mean(observed_val[,i]==picante_predictions$estimated.state)
