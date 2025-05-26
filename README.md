@@ -19,5 +19,5 @@ To run the code, follow these steps:
 1. Download or clone the repository.
 2. Unzip it (if downloaded as a ZIP).
 3. Open AOA_gene_predictions.Rproj in RStudio. This makes sure the working directory is correctly set.
-4. Open and run the RMarkdown files (01_phylo_signal.Rmd and 02_phylo_signal_2.Rmd) without modifying the folder structure. All required data will be read in as expected.
+4. Open and run the RMarkdown files (`01_elastic_net_predictions.Rmd` and `02_AOA_case_study.Rmd`) without modifying the folder structure. All required data will be read in as expected.
 
