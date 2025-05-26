@@ -1,4 +1,4 @@
-# Predicting gene distribution of Ammonia oxidising archaea using phylogenetic signals- code
+# Predicting gene distribution in ammonia-oxidizing archaea using phylogenetic signals- code
 
 This repository contains the scripts and data re-run the analyses of the manuscript [ _Predicting gene distribution of Ammonia oxidising archaea using phylogenetic signals_](https://doi.org/10.1093/ismeco/ycaf087). 
 
