@@ -1,6 +1,6 @@
 # Predicting gene distribution in ammonia-oxidizing archaea using phylogenetic signals- code
 
-This repository contains the scripts and data re-run the analyses of the manuscript [ _Predicting gene distribution of Ammonia oxidising archaea using phylogenetic signals_](https://doi.org/10.1093/ismeco/ycaf087). 
+This repository contains the scripts and data to re-run the analyses of the manuscript [ _Predicting gene distribution in ammonia-oxidizing archaea using phylogenetic signals_](https://doi.org/10.1093/ismeco/ycaf087). 
 
 ## Requirements
 The code is written in RMarkdown and is intended to be run in RStudio. Before running the code, make sure you have the necessary R packages installed (see each .Rmd file for package requirements).
