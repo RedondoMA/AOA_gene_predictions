@@ -15,7 +15,8 @@ If needed, we load the environment from the first script
 Prepare the tree to match with the trait table
 ```{r}
 #Import tree
-tree_cs<-read.tree("./case_study/epa_resultnewick_rooted.tree")#This tree includes the bootstrap values
+tree_cs<-read.tree("./case_study/OTU_placement_rooted.tree")
+
 #Modify OTU nomenclature to match table
 tree_cs$tip.label<-gsub("OTU_","OTU",tree_cs$tip.label)#Change the name of the OTUs
 tree_cs$tip.label<-gsub("_[1-8].*","",tree_cs$tip.label) 
@@ -24,7 +25,7 @@ list_taxa<-tree_cs$tip.label[grep("OTU", tree_cs$tip.label)]
 rows_cs<-data.frame(matrix(nrow=length(list_taxa), ncol=ncol(traits_AOA3)), row.names = list_taxa)
 colnames(rows_cs)<-colnames(traits_AOA3)  
 traits_cs<-rbind(traits_AOA3,rows_cs)#Add the rows to the table
-traits_cs<-subset(traits_cs, select=-c(ipct))#Delete the ipct gene (no phylogenetic signal)
+#traits_cs<-subset(traits_cs, select=-c(ipct))#Delete the ipct gene (no phylogenetic signal)
 #Drop from the tree all taxa except genomes and OTUs
 tree_cs2<-drop.tip(tree_cs,tree_cs$tip.label[!tree_cs$tip.label%in%rownames(traits_cs)])
 #Select the rows on the trait matrix and re-arrange them 
@@ -33,16 +34,55 @@ traits_cs2<-traits_cs[spmatch_cs,]
 #Check that the names are in the same order in the table and tree
 print(identical(rownames(traits_cs2), tree_cs2$tip.label))#Must be true
 ```
-# Compute predictions on OTUs
+# Compute predictions on OTUs using PEM
 
 ```{r}
+
 cs_predictions<-pred_phyl_glmnet(traits=traits_cs2,tree=tree_cs2, opt.thres=TRUE, opt.lam=TRUE)
 
 #Compile the predictions
 predicted_genes_cs<-data.frame(lapply(cs_predictions$predictions, function (x) x[["pred_class"]]))#Extract the predicted genes
 rownames(predicted_genes_cs)<-gsub("OTU", "OTU_",rownames(predicted_genes_cs))#Restore the names of the OTUs
 predicted_genes_cs2<-predicted_genes_cs[grep("OTU", rownames(predicted_genes_cs)),]#Select only the taxa from the case study
+
+#Export the predictions for visualizing on itol
+OTU_predictions_pem<-cbind(predicted_genes_cs2[,Nitrogen], matrix(0, nrow=nrow(predicted_genes_cs2), ncol=2), predicted_genes_cs2[,CAA], matrix(0, nrow=nrow(predicted_genes_cs2), ncol=2), predicted_genes_cs2[,motility], matrix(0, nrow=nrow(predicted_genes_cs2), ncol=2), predicted_genes_cs2[,adaptation])
+
+#write.table(OTU_predictions_pem, "OTU_predictions_pem2408.txt", sep=",", col.names=FALSE,row.names=TRUE, quote=FALSE)
 ```
+
+#Compute predictions on OTUs using ASR
+
+```{r}
+#Prepare the tree to avoid zero branch lengths
+tree_cs2_asr<-tree_cs2
+tree_cs2_asr$edge.length[tree_cs2_asr$edge.length==0]<-0.00000000001
+
+#Prepare the matrix to compile the predictions
+
+AOA_pred_picante_cs<-matrix(ncol=ncol(traits_AOA3), nrow=sum(is.na(traits_cs2[,1])))#Create a matrix that will contain the predicted tips. The rownames will be given by the phyEstimate Disc function. Because is the same tree, the names will be the same for all genes. 
+colnames(AOA_pred_picante_cs)<-colnames(traits_AOA3)#Name the columns according to the genes
+
+
+for (i in 1:ncol(traits_AOA3)){
+#pic_pred<-phyEstimateDisc(tree_AOA_asr2,traits_AOA3[,i,drop=FALSE])#ASR for the taxa on the phylogeny for each gene
+#If working with R >4.2 and the loop stops, run the line below instead of the one above
+pic_pred_cs<-phyEstimateDisc_mine(tree_cs2_asr,traits_AOA3[,i,drop=FALSE])
+AOA_pred_picante_cs[,i]<-pic_pred_cs$estimated.state# Compile the estimated state
+}
+#Summarize final predictions table
+AOA_pred_picante_cs2<-data.frame(apply(AOA_pred_picante_cs, 2, as.numeric))#convert estimated state to binary
+rownames(AOA_pred_picante_cs2)<-rownames(pic_pred_cs)#Assign row names
+rownames(AOA_pred_picante_cs2)<-gsub("OTU", "OTU_",rownames(AOA_pred_picante_cs2))#Restore the names of the OTUs
+
+#Export the predictions for visualizing on itol
+OTU_predictions_asr<-cbind(AOA_pred_picante_cs2[,Nitrogen], matrix(0, nrow=nrow(AOA_pred_picante_cs2), ncol=2), AOA_pred_picante_cs2[,CAA], matrix(0, nrow=nrow(AOA_pred_picante_cs2), ncol=2), AOA_pred_picante_cs2[,motility], matrix(0, nrow=nrow(AOA_pred_picante_cs2), ncol=2), AOA_pred_picante_cs2[,adaptation])
+
+#write.table(OTU_predictions_asr, "OTU_predictions_asr2408.txt", sep=",", col.names=FALSE,row.names=TRUE, quote=FALSE)
+
+
+```
+
 
 
 # RLQ and fourth corner analyses
@@ -55,6 +95,11 @@ load("./case_study/AOA_phyloseq.RData")
 Prepare the three tables for the RLQ and fourth corner analyses
 
 ```{r}
+#choose between fourth corner with pem or asr predictions
+predictions="pem"
+
+
+#PROCEED WITH THE ANALYSIS  
 #Delete the sample S17 that has NAs
 AOA_phyloseq_pruned<-prune_samples(rownames(sample_data(AOA_phyloseq))!="S17", AOA_phyloseq)
 #Delete OTU_108 because it has zero reads after deleting sample S17
@@ -68,7 +113,13 @@ habitat_characteristics$TREATMENT<-as.factor(habitat_characteristics$TREATMENT)#
 habitat_characteristics2<-data.frame(lapply(habitat_characteristics, function(x) if(is.character(x)) as.numeric(x) else x))#Convert all characters to numeric
 rownames(habitat_characteristics2)<-rownames(habitat_characteristics)#Add the row names that it had before
 #Table3.Extract species traits
-species_traits<-predicted_genes_cs2[rownames(predicted_genes_cs2)!="AOA_OTU_108",]
+if(predictions=="pem"){
+  species_traits<-predicted_genes_cs2[rownames(predicted_genes_cs2)!="AOA_OTU_108",]
+}else{
+  species_traits<-AOA_pred_picante_cs2[rownames(predicted_genes_cs2)!="AOA_OTU_108",]
+}
+
+#species_traits<-predicted_genes_cs2[rownames(predicted_genes_cs2)!="AOA_OTU_108",]
 
 #Match names of all three tables
 species_traits<-species_traits[match(colnames(species_table),rownames(species_traits)),]
@@ -81,9 +132,11 @@ Select the traits and soil properties
 
 ```{r}
 incl_env<-c("SD15", "CLAY", "TS.", "P", "K", "CA", "CU", "PH", "NH4.N", "TOT.N", "TOT.C", "DOC", "C.N", "act")#Soil properties reported in Jones et al. 2019
-incl_genes<-c("Amt.1", "Amt.2", "ureC", "nhap", "trk", "cheY_2", "proDH", "flaK", "cheA", "TadC", "flal")#These are genes with at least 5 values of 1 or 0
+#Select the genes that dont have all 1 or 0 values
+species_traits_filtered<-species_traits[,colSums(species_traits)>0 & colSums(species_traits)<nrow(species_traits)]
+#incl_genes<-c("Amt.1", "Amt.2", "ureC", "nhap", "trk", "cheY_2", "proDH", "flaK", "cheA", "TadC", "flal")#These are genes with at least 5 values of 1 or 0
 habitat_characteristics_filtered<-habitat_characteristics2[,colnames(habitat_characteristics2) %in% incl_env]
-species_traits_filtered<-species_traits[,colnames(species_traits) %in% incl_genes]
+#species_traits_filtered<-species_traits[,colnames(species_traits) %in% incl_genes]
 ```
 
 
@@ -125,8 +178,9 @@ ggplot(data = traits)+
   geom_segment(aes(x=0, y=0, xend=CS1, yend=CS2),arrow = arrow(length=unit(0.30,"cm"), ends="last", type = "closed"), color="red",data = traits)+
   geom_hline(yintercept=0, linetype="dotted", color = "black") +
   geom_vline(xintercept=0, linetype="dotted", color = "black") +
-  geom_text(aes(x=CS1*0.9, y=CS2*1.1),label=rownames(traits), size=5,color="red",data=traits)+theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))+xlab("") +
-  ylab("")+geom_segment(aes(x=0, y=0, xend=RS1, yend=RS2),arrow = arrow(length=unit(0.30,"cm"), ends="last", type = "closed"), color="blue",data = env_var)+geom_text(aes(x=RS1*0.9, y=RS2*1.1),label=rownames(env_var), size=5,color="blue",data=env_var)
+  ggrepel::geom_text_repel(aes(x=CS1*0.9, y=CS2*1.1),label=rownames(traits), size=5,color="red",data=traits)+theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))+xlab("") +
+  ylab("")+geom_segment(aes(x=0, y=0, xend=RS1, yend=RS2),arrow = arrow(length=unit(0.30,"cm"), ends="last", type = "closed"), color="blue",data = env_var)+ggrepel::geom_text_repel(aes(x=RS1*0.9, y=RS2*1.1),label=rownames(env_var), size=5,color="blue",data=env_var)
+#ggsave("RLQ_biplot_env-traits_full.pdf",width=8, height=8, dpi=500)
 
 #Biplot sites and species
 ggplot(data = site_scores, aes(x=AxcR1, y=AxcR2))+
@@ -135,6 +189,7 @@ ggplot(data = site_scores, aes(x=AxcR1, y=AxcR2))+
   geom_vline(xintercept=0, linetype="dotted", color = "black") +
   theme_bw()+theme(axis.title.y = element_text(size=15),axis.title.x =element_text(margin=margin(t=15, r=0, b=0, l=0),size=15),panel.grid.major=element_blank(), panel.grid.minor=element_blank(), axis.text.x =element_text(color="black", size=15), axis.text.y =element_text(color="black", size=15), panel.border=element_rect(colour="black", size=1))+ggrepel::geom_text_repel(aes(label=site_name), size=4)+xlab("") + ylab("")+geom_point(aes(x=AxcQ1, y=AxcQ2),data = species_scores,size = 3,fill="grey",shape=3, stroke=0.5, position=position_jitter(w = 0.2, h = 0.2))
 
+#ggsave("RLQ_biplot_site-species.pdf",width=8, height=8, dpi=500)
 
 ```
 
@@ -152,7 +207,7 @@ fourth_aoa<-fourthcorner(
   nrepet=99999#Increase this value to 99999 because of the amount of rows on the dataset
 )
 summary(fourth_aoa)
-plot(fourth_aoa, alpha=0.07)
+plot(fourth_aoa, alpha=0.05)
 
 #Fourth corner function correcting p-value
 fourth_aoa2<-fourthcorner(
@@ -165,7 +220,7 @@ fourth_aoa2<-fourthcorner(
   nrepet=99999#Increase this value to 99999 because of the amount of rows on the dataset
 )
 summary(fourth_aoa2)
-plot(fourth_aoa2, alpha=0.07)
+#plot(fourth_aoa2, alpha=0.1)
 
 ```
 
